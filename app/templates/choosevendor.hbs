@@ -1,0 +1,35 @@
+<div class="list-group">
+   {{#each vendorList as |item|}}
+   <p {{action 'chooseVendor' item}}>
+   <a href="#" class="list-group-item">
+   {{item}} 
+   </a>
+   </p>  
+   {{/each}}
+</div>
+
+{{#if selectedVendor}}
+ <p class="list-group-item">
+         Vendor Name : {{selectedVendor.name}} 
+      </p>
+      <br>
+      <p class="list-group-item">
+         Vendor Email : {{selectedVendor.email}} 
+      </p>
+      <br>
+
+      <p class="list-group-item">
+         Vendor Phone : {{selectedVendor.phone}} 
+      </p>
+      <br>
+
+      <p class="list-group-item">
+         Vendor bank : {{selectedVendor.bank}} 
+      </p>
+      <br>
+      <span class="file1">
+      <p class="ist-group-item">  Upload Purchase order : {{file-upload url="/upload" class="btn btn-primary"}}
+       </p>
+      </span>
+
+{{/if}}

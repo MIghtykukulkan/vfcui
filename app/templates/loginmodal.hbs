@@ -1,0 +1,38 @@
+
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+
+               	<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" {{action 'login'}}>
+				  </form>
+					
+				  <div class="login-help">
+				 <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+<!--   
+  
+  <div class="form-group">
+  <label for="usr">Name:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label for="pwd">Password:</label>
+  <input type="password" class="form-control" id="pwd">
+</div>
+
+
+
+ <input type="button" class="btn btn-primary pull-right" value="Login" {{action 'login'}}>
+
+ -->
+
+  {{/modal-dialog}}
+{{/if}}

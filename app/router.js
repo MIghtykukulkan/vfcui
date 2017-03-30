@@ -7,6 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('home');
+  this.route('anchorhome');
+  this.route('vendorhome');
+  this.route('regulatorhome');
+  this.route('program');
+  this.route('aregister');
+  this.route('vregister');
 });
 
 export default Router;

@@ -1,0 +1,12 @@
+<!--When Anchor not choosen -->
+<h1> Choose the anchor.. </h1>
+<div class="list-group">
+{{#each anchorList as |item|}}
+<p {{action 'chooseAnchor' item}}>
+    <a href="#" class="list-group-item">
+
+     {{item}}  
+
+    </a>
+</p>  
+{{/each}}

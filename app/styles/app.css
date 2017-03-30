@@ -1,0 +1,25 @@
+
+.navbar  {
+    background-color: #f5821f;
+    -webkit-text-fill-color: white; 
+}
+
+.largeicon .mdi {
+    font-size: 115px;
+}
+
+.navbar .mdi {
+    padding-top: 11px;
+}
+
+.smallicon{
+    font-size: 26px !important ;
+}
+
+
+.pt-10{
+    padding-top:100px;
+    height: 350px;
+    position: absolute !important;
+}
+

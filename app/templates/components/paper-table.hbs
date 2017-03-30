@@ -1,0 +1,54 @@
+{{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+{{#table.head as |head|}}
+  {{#head.column checkbox=true}}
+    {{#paper-checkbox disabled=true onChange=null}}{{/paper-checkbox}}
+  {{/head.column}}
+  {{#head.column sortProp="vendor"}}vendor{{/head.column}}
+  {{#head.column sortProp="anchor" numeric=true}}anchor{{/head.column}}
+  {{#head.column sortProp="programid" numeric=true}}Program id{{/head.column}}
+  {{#head.column sortProp="status" numeric=true}}status{{/head.column}}
+
+{{/table.head}}
+
+
+{{#table.body as |body|}}
+  {{#each (sort-by table.sortDesc paginatedDesserts) as |dessert|}}
+    {{#body.row edit=true as |row|}}
+      {{#row.cell checkbox=true}}
+        {{#paper-checkbox
+          value=dessert.checked
+          onChange=(action (mut dessert.checked))}}
+        {{/paper-checkbox}}
+      {{/row.cell}}
+      {{#row.cell}}{{dessert.name}}{{/row.cell}}
+      {{#row.cell numeric=true}}{{dessert.vendor}}{{/row.cell}}
+      {{#row.cell numeric=true}}{{dessert.anchor}}{{/row.cell}}
+      {{#row.cell numeric=true}}{{dessert.programid}}{{/row.cell}}
+      {{#row.cell numeric=true}}{{dessert.status}}{{/row.cell}}
+      {{#row.cell edit=true as |cell|}}
+        {{#if cell.showEdit}}
+          {{#cell.edit-dialog onClose=cell.toggleEdit}}
+            {{paper-input
+              value=dessert.comment
+              onChange=(action (mut dessert.comment))}}
+          {{/cell.edit-dialog}}
+        {{else}}
+          {{dessert.comment}}
+          {{#paper-button iconButton=true onClick=row.toggleEdit}}
+            {{paper-icon 'edit'}}
+          {{/paper-button}}
+        {{/if}}
+      {{/row.cell}}
+    {{/body.row}}
+  {{/each}}
+{{/table.body}}
+{{/paper-data-table}}
+{{paper-data-table-pagination
+limit=limit
+limitOptions=limitOptions
+page=page
+pages=pages
+onChangePage=(action (mut page))
+onChangeLimit=(action (mut limit))
+onIncrementPage=(action 'incrementPage')
+onDecrementPage=(action 'decrementPage')}}

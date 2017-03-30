@@ -1,5 +1,54 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div>
 
-{{outlet}}
+   <div class="offset1 span8 pull-right px-2">
+      <p>
+         <a href="#" >login</a>   |  
+         <span {{action "togglepanel"}} >     
+            <a href="#" >Register</a>  
+        </span> |
+         <a href="#">faq   </a> 
+         <span style="padding-right: 30%;"></span>
+      </p>
+   </div>
+   <h1><img src="assets/images/viewlogo.png"/></h1>
+
+   <!-- registration -->  
+   {{#if tgp}}
+   <div class="container-fluid ">
+      <div class=" register panel panel-primary">
+         <div class="panel-heading">TELL US WHO YOU ARE ?</div>
+         <div class="panel-body">
+            <p>
+               {{input type="checkbox" name="isAnchor" checked=isAnchor}} 
+               I am an Anchor
+            </p>
+            <p>
+               {{input type="checkbox" name="isVendor" checked=isVendor}} 
+               I am a Vendor
+            </p>
+            <input type="button" class="btn btn-primary pull-right" value="Proceed" {{action 'register'}}> 
+         </div>
+      </div>
+   </div>
+   {{/if}}
+   <!-- end registration -->  
+
+ 
+</div>
+<nav class="navbar">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         {{#link-to 'home'}}   {{material-design-icon name='home'}} {{/link-to}}
+      </div>
+      <ul class="nav navbar-nav">
+         <!--<li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>-->
+      </ul>
+   </div>
+</nav>
+
+
+<div class="container">
+   {{outlet}}
+</div>

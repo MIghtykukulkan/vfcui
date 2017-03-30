@@ -1,0 +1,13 @@
+
+<h1> Choose the Vendor for the anchor : <span class="btn btn-success"> {{selectedAnchor}} </span> </h1>
+<div class="list-group">
+{{#each vendorList as |item|}}
+<p {{action 'chooseVendor' item}}>
+    <a href="#" class="list-group-item">
+
+     {{item}}  
+
+    </a>
+</p>  
+{{/each}}
+</div>

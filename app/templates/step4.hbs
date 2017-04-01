@@ -1,9 +1,7 @@
 {{partial 'step1'}}
-
 {{#if selectedAnchor}}
 <div class="box">
    <div class="list-group">
-     
       <p class="list-group-item">
          Anchor Name : {{selectedAnchor.name}} 
       </p>
@@ -12,20 +10,18 @@
          Anchor Email : {{selectedAnchor.email}} 
       </p>
       <br>
-
       <p class="list-group-item">
          Anchor Phone : {{selectedAnchor.phone}} 
       </p>
       <br>
-
       <p class="list-group-item">
          Anchor bank : {{selectedAnchor.bank}} 
       </p>
       <br>
       <span class="file">
-      <p class="ist-group-item">  Upload Purchase order : {{file-upload url="/upload" class="btn btn-primary"}}
-       </p>
+         <p class="ist-group-item">  Upload Purchase order : {{file-upload url="/upload" class="btn btn-primary"}}
+         </p>
       </span>
-   
    </div>
 </div>
+{{/if}}

@@ -1,0 +1,27 @@
+{{partial 'step2'}}
+{{#if selectedVendor}}
+<div class="box">
+   <div class="list-group">
+      <p class="list-group-item">
+         Vendor Name : {{selectedVendor.name}} 
+      </p>
+      <br>
+      <p class="list-group-item">
+         Vendor Email : {{selectedVendor.email}} 
+      </p>
+      <br>
+      <p class="list-group-item">
+         Vendor Phone : {{selectedVendor.phone}} 
+      </p>
+      <br>
+      <p class="list-group-item">
+         Vendor bank : {{selectedVendor.bank}} 
+      </p>
+      <br>
+      <span class="file">
+         <p class="ist-group-item">  Upload Invoice : {{file-upload url="/upload" class="btn btn-primary"}}
+         </p>
+      </span>
+   </div>
+</div>
+{{/if}}

@@ -4,7 +4,19 @@
 @import "ember-paper";
 @import "ember-paper-stepper";
 
+a.list-group-item{
+color: white;
+background-color:lightsalmon;
+}
+.bottom.container-fluid{
+  //background-color: lightgrey;
+}
 
+.container{
+    box-shadow: 0 0 30px gray;
+    padding:0 15px 0 15px;
+  background-color:#fff;
+}
 .md-steppers-alternative .md-steppers-horizontal .md-stepper-indicator {
     min-height: 130px;
 

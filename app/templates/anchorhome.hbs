@@ -102,8 +102,7 @@
  {{!--7.approve invoice--}}
   {{#stepper.step label="approve Invoice" as |step|}}
     {{#step.body}}
-     
-            Purchase Order successfully uploaded, Please wait for vendor to upload Invoice
+           {{partial 'step6'}}
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
       {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}

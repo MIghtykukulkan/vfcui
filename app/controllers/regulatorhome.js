@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+     
      columns: [
             {
                 "propertyName": "sl",
@@ -26,12 +27,21 @@ export default Ember.Controller.extend({
                 "propertyName": "status",
                 "title": "Status",
                 "className": "text-left"
+            },
+              {
+                
+                "title": "Close",
+                "template": "custom/close"
+  
             }
             ],
 
         actions:{
             createprogram:function(){
                 this.transitionToRoute('program');
+            },
+            closeProgram:function(){
+                this.transitionToRoute('program',{ queryParams: { step: 'close' }});
             }
         }
 });

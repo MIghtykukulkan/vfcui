@@ -1,7 +1,9 @@
 import Ember from 'ember';
+import stepperMixin from '../mixins/stepper';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(stepperMixin,{
      vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
+     anchorList : ["ABC Enterprise", "SFS","Syntel Solutions","Jaguar","Honda"],
      selectedVendor: null,
      vendornotchoosen:true,
      percentageComplete : 0,
@@ -34,25 +36,8 @@ export default Ember.Controller.extend({
          purchaseorder: function(){              
              //upload purchase order 
              this.set('percentageComplete', 50);
-         },
-
-         saveModel: function(){
-             console.log("saving the model");
-         },
-         onStepChange :function(mut , currentStep){
-             console.log("step changed" + mut + currentStep)
-         },
-         onStepChange :function(currentStep){
-             console.log("step changed" + mut + currentStep)
-         },
-         nextStep: function(){
-             console.log("nect step");
-            var currstep =  this.get('currentStep');
-            currstep = currstep + 1;
-            this.set('currentStep',currstep);
-         },
-         previousStep: function(){
-              console.log("back step");
          }
+
+        
      }
 });

@@ -8,53 +8,7 @@
 
 
 
-{{#if anchornotchoosen}}
-<!--When Anchor not choosen -->
-<h1> Choose the anchor.. </h1>
-<div class="list-group">
-{{#each anchorList as |item|}}
-<p {{action 'chooseAnchor' item}}>
-    <a href="#" class="list-group-item">
-
-     {{item}}  
-
-    </a>
-</p>  
-{{/each}}
-</div>
-
-<!--When Vendor not choosen -->
-{{else if vendornotchoosen}}
-
-<h1> Choose the Vendor for the anchor : <span class="btn btn-success"> {{selectedAnchor}} </span> </h1>
-<div class="list-group">
-{{#each vendorList as |item|}}
-<p {{action 'chooseVendor' item}}>
-    <a href="#" class="list-group-item">
-
-     {{item}}  
-
-    </a>
-</p>  
-{{/each}}
-</div>
-
-<!-- after choosing vendor and anchor inititate anchor program-->
-{{else}}
-
-Confirm the program initiation for  
-<span class="btn btn-success"> {{selectedAnchor}} </span>
- and
- <span class="btn btn-success"> {{selectedVendor}} </span>
-  by clicking the button below
-
-<p>
-<button type="button" class="btn btn-primary pull-center" value="Confirm Program initiation"  {{action "toggleModal" "vendor"}}>
-    Confirm Program initiation
-</button>
-</p>
-
-{{/if}}
+{{partial 'steplist'}}
 
 
 

@@ -1,0 +1,24 @@
+{{partial 'step2'}}
+{{#if selectedVendor}}
+<div class="box">
+   <div class="list-group">
+      <p class="list-group-item">
+         Anchor Name : {{selectedVendor.name}} 
+      </p>
+      <br>
+      <p class="list-group-item">
+         PO Number : PO31233
+      </p>
+      <br>
+      <p class="list-group-item">
+         PO Amount : INR 1000000.00
+      </p>
+      <br>
+      <p class="list-group-item">
+         Pending Amount : INR 75000.00 
+      </p>
+      <br>
+      {{input type="button" value="approve"}}
+   </div>
+</div>
+{{/if}}

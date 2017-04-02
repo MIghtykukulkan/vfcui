@@ -1,25 +1,30 @@
 import Ember from 'ember';
+import stepperMixin from '../mixins/stepper';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(stepperMixin,{
+    queryParams: ['step'],
+    step:null,
     anchornotchoosen : true,
     vendornotchoosen : true,
-    selectedAnchor : null,
-    selectedVendor: null,
     percentageComplete : 0,
+    currentStep:0,
+    watchstep: function(){
+        var step = this.get('step');
+        if(step==='close'){
+            this.set('currentStep',8)
+        }
+    }.observes('step'),
+    alist:[{
+        "name":"ABC Pvt ltd"
+    },{}],
     anchorList : ["bajaj", "Usha","tata","Jindal","Hiranandini"],
     vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
 
     actions:{
-        chooseAnchor:function(anchorItem){
-            this.set('selectedAnchor',anchorItem);
-            this.set('anchornotchoosen', false);
-            this.set('percentageComplete', 30);
-        },
+        
 
-        chooseVendor:function(vendorItem){
-             this.set('selectedVendor',vendorItem);
-            this.set('vendornotchoosen', false);
-            this.set('percentageComplete', 60);
+        gotohome:function(){
+                this.transitionToRoute('regulatorhome');
         },
          toggleModal: function(usertype) {
             this.toggleProperty('isShowingModal');    

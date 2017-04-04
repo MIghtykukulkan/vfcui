@@ -18,6 +18,7 @@ export default Ember.Mixin.create({
              this.set('selectedVendor',vendorItem);
             this.set('vendornotchoosen', false);
             this.set('percentageComplete', 60);
+            var currentStep = this.get('currentStep');
             if(currentStep!=2 ){
                     this.send('nextStep');
             }

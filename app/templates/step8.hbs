@@ -1,5 +1,6 @@
-{{partial 'step2'}}
-{{#if selectedVendor}}
+
+
+{{#if selectedAnchor}}
 <div class="box">
    <div class="list-group">
       <p class="list-group-item">
@@ -18,7 +19,9 @@
          Pending Amount : INR 75000.00 
       </p>
       <br>
-      {{input type="button" value="approve"}}
+      {{input type="button" value="approve" action=approvePayment}}
    </div>
 </div>
+{{else}}
+    {{partial 'step1'}}
 {{/if}}

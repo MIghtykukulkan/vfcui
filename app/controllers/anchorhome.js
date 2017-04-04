@@ -11,33 +11,40 @@ export default Ember.Controller.extend(stepperMixin,{
      currentStep:3,
 
      actions:{
-         chooseVendor: function(vendorItem){
+        poupload:function(){
+             this.set('modalmessage', " Purchase order uploaded successfully !!! , Click OK to go back to home")
+              console.log("approved")
+             this.toggleProperty('approveProperty');    
+             this.set('percentageComplete', 100); 
+        },
+         gotohome: function(){
+               //var currentStep = this.get('currentStep');
+                //currentStep = currentStep -1;
+                //this.set('currentStep',currentStep);
+                this.toggleProperty('approveProperty'); 
+                this.toggleProperty('selectedVendor') ; 
+                //this.transitionToRoute('vendorhome')
+                var currentStep = this.get('currentStep');
+                currentStep = currentStep - 3;
+                this.set('currentStep',currentStep);
+                 this.set('selectedVendor',false);
 
-                    var vendorObj = {
-                        "name":vendorItem,
-                        "email":"ABCXYZ@SAD.com",
-                        "phone":"1232341233",
-                        "bank":"icici",
-                        "IFSC":"ICC000688"
-                    };
-                    this.set('selectedVendor',vendorObj);
-                    this.set('vendornotchoosen', false);
-                    this.set('percentageComplete', 30);
-                    this.set('showDetails',true)
-
-                    //removing other items from arrays
-                    var newArray = [vendorItem];
-                    this.set('vendorList',newArray);
-
-                    //var stepchange = this.get('onStepChange');
-                    //stepchange(5);
+        },
+         //jump t appoval step
+         payments: function(){
+             
+             this.set('selectedVendor',false);
+             var currentStep = this.get('currentStep');
+                currentStep = currentStep + 3;
+                this.set('currentStep',currentStep);
          },
+         
 
-         purchaseorder: function(){              
-             //upload purchase order 
-             this.set('percentageComplete', 50);
-         }
-
+        initiate: function(){
+            this.set('modalmessage', " Payment Initiated Successfully !!! , Click OK to go back to home")
+            this.toggleProperty('approveProperty'); 
+        }
+    
         
      }
 });

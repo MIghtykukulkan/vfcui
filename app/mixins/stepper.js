@@ -8,13 +8,20 @@ export default Ember.Mixin.create({
             this.set('selectedAnchor',anchorItem);
             this.set('anchornotchoosen', false);
             this.set('percentageComplete', 30);
-            this.send('nextStep');
+            var currentStep = this.get('currentStep');
+
+            if(currentStep!=4 && currentStep!=7){
+                this.send('nextStep');
+            }
         },
         chooseVendor:function(vendorItem){
              this.set('selectedVendor',vendorItem);
             this.set('vendornotchoosen', false);
             this.set('percentageComplete', 60);
-            this.send('nextStep');
+            if(currentStep!=2 ){
+                    this.send('nextStep');
+            }
+            
         },
         saveModel: function(){
             console.log("TODDO: called when all steps are completed");

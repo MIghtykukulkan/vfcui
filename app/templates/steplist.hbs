@@ -74,33 +74,39 @@
   {{#stepper.step label="purchase Order" as |step|}}
     {{#step.body}}
       
-    {{partial "choosevendor"}}
+    {{partial "step4"}}
 
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
+        {{#paper-button primary=true raised=true onClick=(action 'poupload')}}
+        Submit
       {{/paper-button}}
-      {{#paper-button onClick=(action 'previousStep')}}
-        Back
+
+        {{#paper-button primary=true raised=true onClick=(action 'payments')}}
+        Jump to Payments
       {{/paper-button}}
+    
     {{/step.actions}}
   {{/stepper.step}}
 
 
- {{!--6. upload invoice--}}
+ {{!--5. upload invoice--}}
   {{#stepper.step label="Upload Invoice" as |step|}}
     {{#step.body}}
+
+    Pending approvals : 
             {{partial 'step5'}}
-            Purchase Order successfully uploaded, Please wait for vendor to upload Invoice
+            
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
+      {{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
+        Submit
       {{/paper-button}}
-      {{#paper-button onClick=(action 'previousStep')}}
-        Back
+
+       {{#paper-button primary=true raised=true onClick=(action 'paymentapproval')}}
+        Jump to Approval
       {{/paper-button}}
+     
     {{/step.actions}}
   {{/stepper.step}}
 
@@ -125,37 +131,28 @@
   {{#stepper.step label="Initiate Payment" as |step|}}
     {{#step.body}}
      
-            Purchase Order successfully uploaded, Please wait for vendor to upload Invoice
             {{partial 'step7'}}
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
-      {{/paper-button}}
-      {{#paper-button onClick=(action 'previousStep')}}
-        Back
-      {{/paper-button}}
+     
     {{/step.actions}}
   {{/stepper.step}}
 
 
- {{!--8. initiate payment --}}
+ {{!--8. approve payment --}}
   {{#stepper.step label="Approve Payment" as |step|}}
     {{#step.body}}
      
             {{partial 'step8'}}
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
-      {{/paper-button}}
-      {{#paper-button onClick=(action 'previousStep')}}
-        Back
-      {{/paper-button}}
-    {{/step.actions}}
+       {{#paper-button primary=true raised=true onClick=(action 'approvePayment')}}
+        Approve Payment
+        {{/paper-button}}
+     {{/step.actions}}
   {{/stepper.step}}
 
-   {{!--8. initiate payment --}}
+   {{!--9. program closure --}}
   {{#stepper.step label="Program closure" as |step|}}
     {{#step.body}}
           {{partial 'step9'}}

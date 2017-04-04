@@ -34,5 +34,19 @@
   {{/modal-dialog}}
 {{/if}}
 
+{{#if closureConfirmation}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+   <div class="loginmodal-container">
+ <p>
+      Program successfully Closed , Click OK to go back to home
+ </p>
+ <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
+   </div>
+
+  {{/modal-dialog}}
+{{/if}}
+
 
 

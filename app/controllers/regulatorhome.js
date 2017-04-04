@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
 
         actions:{
             createprogram:function(){
-                this.transitionToRoute('program');
+                this.transitionToRoute('program',{ queryParams: { step: 'init' }});
             },
             closeProgram:function(){
                 this.transitionToRoute('program',{ queryParams: { step: 'close' }});

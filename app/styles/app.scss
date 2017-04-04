@@ -12,7 +12,7 @@ background-color:lightsalmon;
   //background-color: lightgrey;
 }
 
-.container{
+.container, .col-md-4{
     box-shadow: 0 0 30px gray;
     padding:0 15px 0 15px;
   background-color:#fff;
@@ -186,8 +186,8 @@ background-color: transparent;
 
 
 body {
-    font-family: inherit;
-    //font-size: 24px;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 150%;
 }
 
 .box {
@@ -211,3 +211,30 @@ height: 20px;
     width: 33.33333%;
 }
 
+//table css
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th .ember-text-field, columns-dropdown, table tr:FIRST-CHILD + tr
+{
+    display:none;
+}
+
+.inner-table-wrapper{
+  padding-top: 2%;
+}

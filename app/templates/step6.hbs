@@ -1,8 +1,30 @@
 {{!--approve invoice --}}
 
-{{! should show list that is eligble for invoice approval only -- }}
-{{partial 'step2'}}
+
 
 --Invoice Details--
 
-<input type="button" class="btn btn-primary" value="Approve">
+<div class="box">
+   <div class="list-group">
+      <p class="list-group-item">
+         Anchor Name : ABC privated ltd
+      </p>
+      <br>
+      <p class="list-group-item">
+         Invoice No : 231222
+      </p>
+      <br>
+      <p class="list-group-item">
+        Invice Amnount : 232000.00
+      </p>
+      <br>
+     
+
+   </div>
+</div>
+
+<p>
+<button type="button" class="btn btn-primary pull-right" {{action 'approve'}}>
+      Approve
+      </button>
+</p>

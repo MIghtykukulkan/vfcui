@@ -1,27 +1,31 @@
-{{partial 'step1'}}
-{{#if selectedAnchor}}
+
+
+
+{{#if selectedVendor}}
 <div class="box">
    <div class="list-group">
       <p class="list-group-item">
-         Anchor Name : {{selectedAnchor.name}} 
+         Vendor Name : {{selectedVendor.name}} 
       </p>
       <br>
       <p class="list-group-item">
-         Anchor Email : {{selectedAnchor.email}} 
+         Vendor Email : {{selectedVendor.email}} 
       </p>
       <br>
       <p class="list-group-item">
-         Anchor Phone : {{selectedAnchor.phone}} 
+         Vendor Phone : {{selectedVendor.phone}} 
       </p>
       <br>
       <p class="list-group-item">
-         Anchor bank : {{selectedAnchor.bank}} 
+         Vendor bank : {{selectedVendor.bank}} 
       </p>
       <br>
       <span class="file">
-         <p class="ist-group-item">  Upload Purchase order : {{file-upload url="/upload" class="btn btn-primary"}}
+         <p class="ist-group-item">  Upload Invoice : {{file-upload url="/upload" class="btn btn-primary"}}
          </p>
       </span>
    </div>
 </div>
+{{else}}
+{{partial 'step2'}}
 {{/if}}

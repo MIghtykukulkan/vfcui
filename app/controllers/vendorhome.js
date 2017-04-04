@@ -1,58 +1,49 @@
 import Ember from 'ember';
+import stepperMixin from '../mixins/stepper';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(stepperMixin,{
      anchorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
-    selectedVendor: null,
-     vendornotchoosen:true,
-     percentageComplete : 0,
-     showDetails: false,
-     currentStep:5,
+    selectedAnchor: false,
+   
+     
 
      actions:{
-         chooseVendor: function(vendorItem){
+         //jump t appoval step
+         paymentapproval: function(){
+             
+             this.set('selectedAnchor',false);
+             var currentStep = this.get('currentStep');
+                currentStep = currentStep + 3;
+                this.set('currentStep',currentStep);
+         },
+         //approve paymet
+         approvePayment: function(){
 
-                    var vendorObj = {
-                        "name":vendorItem,
-                        "email":"ABCXYZ@SAD.com",
-                        "phone":"1232341233",
-                        "bank":"icici",
-                        "IFSC":"ICC000688"
-                    };
-                    this.set('selectedVendor',vendorObj);
-                    this.set('vendornotchoosen', false);
-                    this.set('percentageComplete', 30);
-                    this.set('showDetails',true)
+            
 
-                    //removing other items from arrays
-                    var newArray = [vendorItem];
-                    this.set('vendorList',newArray);
-
-                    //var stepchange = this.get('onStepChange');
-                    //stepchange(5);
+             this.set('modalmessage', " Payment Approved !!")
+            this.toggleProperty('approveProperty'); 
          },
 
-         purchaseorder: function(){              
-             //upload purchase order 
-             this.set('percentageComplete', 50);
-         },
+         
+          invoiceupload:function(){
+               this.set('modalmessage', " Invoice uploaded successfully !!! , Click OK to go back to home")
+              console.log("approved")
+             this.toggleProperty('approveProperty');    
+             this.set('percentageComplete', 100);   
+        },
+        toggleModal: function(usertype) {
+            this.toggleProperty('approveProperty');    
+        },
+        gotohome: function(){
+               var currentStep = this.get('currentStep');
+                //currentStep = currentStep -1;
+                this.set('currentStep',currentStep);
+                this.toggleProperty('approveProperty'); 
+                this.toggleProperty('selectedAnchor') ; 
+                //this.transitionToRoute('vendorhome')
+        }
 
-         saveModel: function(){
-             console.log("saving the model");
-         },
-         onStepChange :function(mut , currentStep){
-             console.log("step changed" + mut + currentStep)
-         },
-         onStepChange :function(currentStep){
-             console.log("step changed" + mut + currentStep)
-         },
-         nextStep: function(){
-             console.log("nect step");
-            var currstep =  this.get('currentStep');
-            currstep = currstep + 1;
-            this.set('currentStep',currstep);
-         },
-         previousStep: function(){
-              console.log("back step");
-         }
+         
      }
 });

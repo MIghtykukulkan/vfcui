@@ -25,7 +25,10 @@ export default Ember.Controller.extend(stepperMixin,{
                 this.toggleProperty('selectedVendor') ; 
                 //this.transitionToRoute('vendorhome')
                 var currentStep = this.get('currentStep');
-                currentStep = currentStep - 3;
+                console.log(currentStep)
+                if(currentStep===6){
+                    currentStep = currentStep - 3;
+                }
                 this.set('currentStep',currentStep);
                  this.set('selectedVendor',false);
 

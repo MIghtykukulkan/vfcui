@@ -19,8 +19,7 @@ export default Ember.Controller.extend(stepperMixin,{
          //approve paymet
          approvePayment: function(){
 
-            
-
+        
              this.set('modalmessage', " Payment Approved !!")
             this.toggleProperty('approveProperty'); 
          },
@@ -38,6 +37,9 @@ export default Ember.Controller.extend(stepperMixin,{
         gotohome: function(){
                var currentStep = this.get('currentStep');
                 //currentStep = currentStep -1;
+                 if(currentStep===6){
+                    currentStep = currentStep - 3;
+                }
                 this.set('currentStep',currentStep);
                 this.toggleProperty('approveProperty'); 
                 this.toggleProperty('selectedAnchor') ; 

@@ -14,6 +14,8 @@ Router.map(function() {
   this.route('program');
   this.route('aregister');
   this.route('vregister');
+  this.route('sample');
+  this.route('anothersample');
 });
 
 export default Router;

@@ -1,0 +1,19 @@
+
+<h1> {{title}} </h1> <br>
+
+
+
+enter your name : {{input type="text" value=myname}}
+
+<input type="button" value="click me" {{action 'myaction'}}/>
+
+In componentt : {{myname}}
+
+{{#if nameexists}}
+Welcome {{myname}}
+
+{{else}}
+
+you dont have a name
+{{/if}}
+

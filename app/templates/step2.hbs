@@ -1,4 +1,4 @@
-
+<!--
 <h1> Choose the Vendor for the anchor : <span class="btn btn-success"> {{selectedAnchor}} </span> </h1>
 <div class="list-group">
 {{#each vendorList as |item|}}
@@ -10,4 +10,25 @@
     </a>
 </p>  
 {{/each}}
+</div>-->
+<h1> Choose the Vendor for the anchor :  </h1>
+<div class="list-group">
+
+<p class="list-group-item">
+      
+{{multiselect-checkboxes options=vendorList  selection=selectedvendr onchange=(action 'chooseVendor')}}
+
+</p> 
+ <p>Vendor list:
+       <ul>
+        {{#each selectedvendr as |vendorList|}}
+           <li>{{vendorList}}</li>
+          {{/each}}
+       </ul>        
+</p>
+
+<button type="button" class="btn btn-primary"{{action 'submitselectvendorlist' selectedvendr }}>
+      Submit 
+      </button>
+
 </div>

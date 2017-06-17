@@ -41,6 +41,7 @@
     "ember-load-initializers": "^0.6.0",
     "ember-modal-dialog": "0.9.1",
     "ember-models-table": "1.11.0",
+    "ember-multiselect-checkboxes": "0.10.3",
     "ember-paper": "1.0.0-alpha.19",
     "ember-paper-stepper": "0.0.5",
     "ember-resolver": "^2.0.3",

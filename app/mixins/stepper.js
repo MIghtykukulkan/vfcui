@@ -55,11 +55,11 @@ export default Ember.Mixin.create({
             console.log('selectvendor'+selectvendor);
             this.set('selectedvendor ',selectvendor);
             console.log("selectedvendor :"+selectvendor);
-                console.log('this is done');
-                this.set('vendoranchorlist',true);
-                console.log("vendoranchorlist"+vendoranchorlist);
-                var currentStep = this.get('currentStep');
-                if(currentStep!=3 ){
+            console.log('this is done');
+            this.set('vendoranchorlist',true);
+           // console.log("vendoranchorlist"+vendoranchorlist);
+            var currentStep = this.get('currentStep');
+            if(currentStep!=3 ){
                     this.send('nextStep');
             }
           

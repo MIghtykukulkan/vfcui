@@ -11,7 +11,8 @@
 </p>  
 {{/each}}
 </div>-->
-
+    
+{{#if vendorregulator}}
 <h1> Choose the Vendor for the anchor :  </h1>
 <div class="list-group">
 
@@ -31,15 +32,19 @@
 <button type="button" class="btn btn-primary"{{action 'submitselectvendorlist' selectedvendor }}>
       Submit 
       </button>
-{{#if anchor}}
-<p>Vendor list:
+</div>
+{{else}}
+<div>
+<p>Choose any one of Vendor the for Purchase Order:
        <ul>
         {{#each selectedvendor as |vendorList|}}
-           <li>{{vendorList}}</li>
+           <!--li>{{vendorList}}</li>-->
+           {{radio-button value=vendorList checked=selectedNumber}}{{vendorList}}
           {{/each}}
        </ul>        
 </p>
 
 
-{{/if}}
+
 </div>
+{{/if}}

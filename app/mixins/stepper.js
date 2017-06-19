@@ -7,12 +7,16 @@ export default Ember.Mixin.create({
     selectedvendor:[],
     selectedvendor :Ember.A(), 
     //selectvendor :null,
+    vendoranchorlist :false,
+    vendorregulator :false,
     
     actions:{
         chooseAnchor:function(anchorItem){
             this.set('selectedAnchor',anchorItem);
             this.set('anchornotchoosen', false);
-            this.set('percentageComplete', 30);
+            this.set('vendorregulator',true);
+            //console.log("vendorregulator:"+vendorregulator);      
+            this.set('percentageComplete', 30); 
             var currentStep = this.get('currentStep');
 
             if(currentStep!=4 && currentStep!=7){
@@ -20,17 +24,17 @@ export default Ember.Mixin.create({
             }
         },
         chooseVendor:function(vendorItem){
-             /*this.set('selectedVendor',vendorItem);
+            this.set('selectedVendor',vendorItem);
             this.set('vendornotchoosen', false);
             this.set('percentageComplete', 60);
             var currentStep = this.get('currentStep');
             if(currentStep!=3 ){
                     this.send('nextStep');
-            }*/
+            }
             
-             var selectvendorlist=[];
+           /*  var selectvendorlist=[];
             selectvendorlist=vendorItem;
-            console.log("selectvendorlist"+selectvendorlist);
+            console.log("selectvendorlist"+selectvendorlist);*/
             
         },
         saveModel: function(){
@@ -52,10 +56,14 @@ export default Ember.Mixin.create({
             this.set('selectedvendor ',selectvendor);
             console.log("selectedvendor :"+selectvendor);
                 console.log('this is done');
+                this.set('vendoranchorlist',true);
+                console.log("vendoranchorlist"+vendoranchorlist);
                 var currentStep = this.get('currentStep');
                 if(currentStep!=3 ){
                     this.send('nextStep');
             }
+          
+       
         }
     }
 });

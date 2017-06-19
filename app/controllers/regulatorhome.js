@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-     
+     vendorregulator :false,
      columns: [
             {
                 "propertyName": "sl",
@@ -39,6 +39,7 @@ export default Ember.Controller.extend({
         actions:{
             createprogram:function(){
                 this.transitionToRoute('program',{ queryParams: { step: 'init' }});
+                
             },
             closeProgram:function(){
                 this.transitionToRoute('program',{ queryParams: { step: 'close' }});

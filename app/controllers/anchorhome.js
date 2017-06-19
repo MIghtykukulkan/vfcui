@@ -2,7 +2,7 @@ import Ember from 'ember';
 import stepperMixin from '../mixins/stepper';
 
 export default Ember.Controller.extend(stepperMixin,{
-     vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
+     //vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
      anchorList : ["ABC Enterprise", "SFS","Syntel Solutions","Jaguar","Honda"],
      selectedVendor: null,
      vendornotchoosen:true,
@@ -36,10 +36,13 @@ export default Ember.Controller.extend(stepperMixin,{
          //jump t appoval step
          payments: function(){
              
-             this.set('selectedVendor',false);
+             this.set('selectvendor',false);
              var currentStep = this.get('currentStep');
+             console.log("currentStep"+currentStep);
                 currentStep = currentStep + 3;
                 this.set('currentStep',currentStep);
+                        console.log("currentStep"+currentStep);
+
          },
          
 

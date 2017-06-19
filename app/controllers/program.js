@@ -16,7 +16,7 @@ export default Ember.Controller.extend(stepperMixin,{
         }
          if(step==='init'){
             this.set('currentStep',0)
-            his.set('percentageComplete',0)
+            this.set('percentageComplete',0)
         }
     }.observes('step'),
     alist:[{

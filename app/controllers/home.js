@@ -7,20 +7,20 @@ export default Ember.Controller.extend({
     actions: {
         toggleModal: function(usertype) {
             this.toggleProperty('isShowingModal');            
-            this.set('usertype', usertype)
+            this.set('usertype', usertype);
         },
         login: function() {
             console.log("Action Loginss");
 
             switch (this.get('usertype')) {
                 case "anchor":
-                    this.transitionToRoute('anchorhome')
+                    this.transitionToRoute('anchorhome');
                     break;
                 case "vendor":
-                    this.transitionToRoute('vendorhome')
+                    this.transitionToRoute('vendorhome');
                     break;
                 case "regulator":
-                    this.transitionToRoute('regulatorhome')
+                    this.transitionToRoute('regulatorhome');
                     break;
             }
 

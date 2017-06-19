@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
+      vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
     selectedAnchor : null,
     selectedVendor : null,
-    selectedvendr:[],
-    selectedvendr :Ember.A(), 
+    selectedvendor:[],
+    selectedvendor :Ember.A(), 
+    //selectvendor :null,
     
     actions:{
         chooseAnchor:function(anchorItem){
@@ -25,10 +27,10 @@ export default Ember.Mixin.create({
             if(currentStep!=3 ){
                     this.send('nextStep');
             }*/
-            /*
+            
              var selectvendorlist=[];
             selectvendorlist=vendorItem;
-            console.log("selectvendorlist"+selectvendorlist);*/
+            console.log("selectvendorlist"+selectvendorlist);
             
         },
         saveModel: function(){
@@ -47,8 +49,8 @@ export default Ember.Mixin.create({
         submitselectvendorlist:function(selectvendor){
             var selectvendor = selectvendor;
             console.log('selectvendor'+selectvendor);
-            this.set('selectvendor',selectvendor);
-            console.log("selectvendor"+selectvendor);
+            this.set('selectedvendor ',selectvendor);
+            console.log("selectedvendor :"+selectvendor);
                 console.log('this is done');
                 var currentStep = this.get('currentStep');
                 if(currentStep!=3 ){

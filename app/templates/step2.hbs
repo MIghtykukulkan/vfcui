@@ -16,20 +16,30 @@
 <div class="list-group">
 
 <p class="list-group-item">
-      
-{{multiselect-checkboxes options=vendorList  selection=selectedvendr onchange=(action 'chooseVendor')}}
-
+    {{!--{{#if regulator}}  --}}
+{{multiselect-checkboxes options=vendorList  selection=selectedvendor onchange=(action 'chooseVendor')}}
+{{!--{{/if}}--}}
 </p> 
  <p>Vendor list:
        <ul>
-        {{#each selectedvendr as |vendorList|}}
+        {{#each selectedvendor as |vendorList|}}
            <li>{{vendorList}}</li>
           {{/each}}
        </ul>        
 </p>
 
-<button type="button" class="btn btn-primary"{{action 'submitselectvendorlist' selectedvendr }}>
+<button type="button" class="btn btn-primary"{{action 'submitselectvendorlist' selectedvendor }}>
       Submit 
       </button>
+{{#if anchor}}
+<p>Vendor list:
+       <ul>
+        {{#each selectedvendor as |vendorList|}}
+           <li>{{vendorList}}</li>
+          {{/each}}
+       </ul>        
+</p>
 
+
+{{/if}}
 </div>

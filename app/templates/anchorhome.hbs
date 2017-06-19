@@ -1,5 +1,50 @@
-{{partial 'steplist'}}
+{{!--{{partial 'steplist'}}--}}
+<div class="layout layout-align-center-center slider-container">
+        <div flex=10 class="layout flex-10 layout-align-center-center">
+          <span>Progress</span>
+        </div>
+        {{paper-slider class="flex" discrete=true value=currentStep step=1 min=1 max=9 onChange=(action (mut rating1))}}
+      </div>
 
+{{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
+  onStepperCompleted=(action "saveModel") as |stepper|}}
+
+  {{#stepper.step label="choose Vendor" as |step|}}
+    {{#step.body}}
+       {{!--{{partial 'step2'}}--}}
+        {{"This step is performed by the Regulataor"}}
+          
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+     {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
+        Continue
+      {{/paper-button}} --}}
+      {{#paper-button onClick=(action 'previousStep')}}
+        Back
+      {{/paper-button}}
+    {{/step.actions}}
+  {{/stepper.step}}
+
+{{#stepper.step label="purchase Order" as |step|}}
+    {{#step.body}}
+      
+    {{partial "step4"}}
+
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+        {{#paper-button primary=true raised=true onClick=(action 'poupload')}}
+        Submit
+      {{/paper-button}}
+
+        {{#paper-button primary=true raised=true onClick=(action 'payments')}}
+        Jump to Payments
+      {{/paper-button}}
+    
+    {{/step.actions}}
+  {{/stepper.step}}
+
+
+  {{/paper-stepper}}
 
 {{#if approveProperty}}
   {{#modal-dialog close="toggleModal"

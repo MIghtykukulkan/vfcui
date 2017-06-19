@@ -8,7 +8,7 @@ export default Ember.Controller.extend(stepperMixin,{
      vendornotchoosen:true,
      percentageComplete : 0,
      showDetails: false,
-     currentStep:3,
+     currentStep:1,
 
      actions:{
         poupload:function(){
@@ -46,8 +46,7 @@ export default Ember.Controller.extend(stepperMixin,{
         initiate: function(){
             this.set('modalmessage', " Payment Initiated Successfully !!! , Click OK to go back to home")
             this.toggleProperty('approveProperty'); 
-        }
-    
+        },
         
      }
 });

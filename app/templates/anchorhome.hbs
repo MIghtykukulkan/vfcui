@@ -9,11 +9,10 @@
 {{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
 
-  {{#stepper.step label="choose Vendor" as |step|}}
+  {{#stepper.step label="Select Vendor" as |step|}}
     {{#step.body}}
-       {{partial 'step2'}}
+  {{partial 'step2'}}
         {{"This step is performed by the Regulataor"}}
-        
           
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}

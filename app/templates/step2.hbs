@@ -17,9 +17,9 @@
 <div class="list-group">
 
 <p class="list-group-item">
-    {{!--{{#if regulator}}  --}}
+  
 {{multiselect-checkboxes options=vendorList  selection=selectedvendor }}
-{{!--{{/if}}--}}
+
 </p> 
  <p>Vendor list:
        <ul>
@@ -35,15 +35,16 @@
 </div>
 {{else}}
 <div>
-<p>Choose any one of Vendor the for Purchase Order:
+<p><h1>Choose one of Vendor the for Purchase Order:</h1>
        <ul>
         {{#each selectedvendor as |vendorList|}}
-          <li> {{radio-button value=vendorList checked=selectedNumber}} {{vendorList}}</li>
+        <li> {{radio-button value=vendorList checked=selectedVendorName onchange=(action 'particularVendor')}} {{vendorList}}</li>
+        {{!-- {{#radio-button radioClass = "radioClass" value = vendorList }} {{vendorList}} {{/radio-button}}--}}
         {{/each}}
-       </ul>        
+       </ul>   {{selectedVendorName}}     
 </p>
-
-
-
+<button type="button" class="btn btn-primary"{{action 'particularVendor'selectedVendorName }}>
+      Move to purchase Order
+      </button>
 </div>
 {{/if}}

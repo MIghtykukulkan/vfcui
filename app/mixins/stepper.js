@@ -31,11 +31,6 @@ export default Ember.Mixin.create({
             if(currentStep!=3 ){
                     this.send('nextStep');
             }
-            
-           /*  var selectvendorlist=[];
-            selectvendorlist=vendorItem;
-            console.log("selectvendorlist"+selectvendorlist);*/
-            
         },
         saveModel: function(){
             console.log("TODDO: called when all steps are completed");
@@ -62,8 +57,12 @@ export default Ember.Mixin.create({
             if(currentStep!=3 ){
                     this.send('nextStep');
             }
-          
-       
+        },
+        particularVendor:function(selectedVendorName){
+            var selectedVendorName =selectedVendorName;
+            console.log("selectedVendorName:"+selectedVendorName);
+            this.set('selectedVendor',selectedVendorName);
+            console.log("selectedVendor :",selectedVendor);
         }
     }
 });

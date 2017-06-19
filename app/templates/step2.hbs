@@ -38,9 +38,8 @@
 <p>Choose any one of Vendor the for Purchase Order:
        <ul>
         {{#each selectedvendor as |vendorList|}}
-           <!--li>{{vendorList}}</li>-->
-           {{radio-button value=vendorList checked=selectedNumber}}{{vendorList}}
-          {{/each}}
+          <li> {{radio-button value=vendorList checked=selectedNumber}} {{vendorList}}</li>
+        {{/each}}
        </ul>        
 </p>
 

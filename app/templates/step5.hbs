@@ -1,21 +1,22 @@
+   {{!--{{partial 'step1'}}--}}
+     
 
-{{#if selectedAnchor}}
 <div class="box">
    <div class="list-group">
       <p class="list-group-item">
-         Anchor Name : {{selectedAnchor.name}} 
+         Anchor Name : {{anchorName}}
       </p>
       <br>
       <p class="list-group-item">
-         Anchor Email : {{selectedAnchor.email}} 
+         Anchor Email : {{anchorEmail}} 
       </p>
       <br>
       <p class="list-group-item">
-         Anchor Phone : {{selectedAnchor.phone}} 
+         Anchor Phone : {{anchorPhone}} 
       </p>
       <br>
       <p class="list-group-item">
-         Anchor bank : {{selectedAnchor.bank}} 
+         Anchor bank : {{anchorBank}} 
       </p>
       <br>
       <span class="file">
@@ -24,6 +25,3 @@
       </span>
    </div>
 </div>
-{{else}}
-    {{partial 'step1'}}
-{{/if}}

@@ -1,11 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-      vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
+    vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
+ // anchorList : ["ABC Enterprise", "SFS","Syntel Solutions","Jaguar","Honda"],
     selectedAnchor : null,
     selectedVendor : null,
     selectedvendor:[],
-    selectedvendor :Ember.A(), 
+ //  selectedvendor :Ember.A(), 
     //selectvendor :null,
     vendoranchorlist :false,
     vendorregulator :false,
@@ -18,7 +19,7 @@ export default Ember.Mixin.create({
             //console.log("vendorregulator:"+vendorregulator);      
             this.set('percentageComplete', 30); 
             var currentStep = this.get('currentStep');
-
+                //  this.send('nextStep');
             if(currentStep!=4 && currentStep!=7){
                 this.send('nextStep');
             }
@@ -58,6 +59,5 @@ export default Ember.Mixin.create({
                     this.send('nextStep');
             }
         }
-        
     }
 });

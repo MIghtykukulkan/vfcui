@@ -1,9 +1,7 @@
 import Ember from 'ember';
 import stepperMixin from '../mixins/stepper';
- TCSlist : [{"name":"TCS","email":"abc@xyz.com","phone":"666","bank":"xyz bank"}];
+
 export default Ember.Controller.extend(stepperMixin,{
-     //vendorList : ["Hexaware", "TCS","Syntex","Jaguar","Honda"],
-     anchorList : ["ABC Enterprise", "SFS","Syntel Solutions","Jaguar","Honda"],
     vendorname:null,
     vendoremail:null,
     vendorphone:null,
@@ -67,29 +65,29 @@ export default Ember.Controller.extend(stepperMixin,{
             }
             else if(selectedVendorName === 'Hexaware'){
                 console.log("if Hexaware loop");
-                   this.set('vendorname','Hexaware');
-                   this.set('vendoremail','hex@abc.com');
+                this.set('vendorname','Hexaware');
+                this.set('vendoremail','hex@abc.com');
                 this.set('vendorphone',9995111195);
                 this.set('vendorbank','HDFC Bank')
             }
             else if(selectedVendorName === 'Syntex'){
                 console.log("if Syntex loop");
-                   this.set('vendorname','Syntex');
-                   this.set('vendoremail','syntex@abc.com');
+                this.set('vendorname','Syntex');
+                this.set('vendoremail','syntex@abc.com');
                 this.set('vendorphone',998888888);
                 this.set('vendorbank','Dena Bank')
             }
             else if(selectedVendorName === 'Jaguar'){
                 console.log("if Jaguar loop");
-                   this.set('vendorname','Jaguar');
-                   this.set('vendoremail','Jaguar@abc.com');
+                this.set('vendorname','Jaguar');
+                this.set('vendoremail','Jaguar@abc.com');
                 this.set('vendorphone',8500000001);
                 this.set('vendorbank','SBI Bank')
             }
             else if(selectedVendorName === 'Honda'){
                 console.log("if Honda loop");
-                   this.set('vendorname','Honda');
-                   this.set('vendoremail','honda@abc.com');
+                this.set('vendorname','Honda');
+                this.set('vendoremail','honda@abc.com');
                 this.set('vendorphone',9995111195);
                 this.set('vendorbank','Bank of India')
             }

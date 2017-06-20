@@ -22,9 +22,9 @@
      {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
         Continue
       {{/paper-button}} --}}
-      {{#paper-button onClick=(action 'previousStep')}}
+    {{!--  {{#paper-button onClick=(action 'previousStep')}}
         Back
-      {{/paper-button}}
+      {{/paper-button}}--}}
     {{/step.actions}}
   {{/stepper.step}}
 
@@ -69,7 +69,7 @@
     {{/step.actions}}
   {{/stepper.step}}
 
-
+{{!--
 <!--4. select program and upload document-->
   {{#stepper.step label="purchase Order" as |step|}}
     {{#step.body}}
@@ -125,7 +125,7 @@
       {{/paper-button}}
     {{/step.actions}}
   {{/stepper.step}}
-
+--}}
 
  {{!--8. initiate payment --}}
   {{#stepper.step label="Initiate Payment" as |step|}}

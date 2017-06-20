@@ -1,7 +1,62 @@
 
 
-{{partial 'steplist'}}
+{{!--{{partial 'steplist'}}--}}
 
+<div class="layout layout-align-center-center slider-container">
+        <div flex=10 class="layout flex-10 layout-align-center-center">
+          <span>Progress</span>
+        </div>
+        {{paper-slider class="flex" discrete=true value=currentStep step=1 min=1 max=9 onChange=(action (mut rating1))}}
+      </div>
+
+{{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
+  onStepperCompleted=(action "saveModel") as |stepper|}}
+
+{{#stepper.step }}
+  {{/stepper.step}}
+
+ {{#stepper.step label="choose anchor" as |step|}}
+    {{#step.body}}
+        <h2>  Choose Anchor for upload Invoice:</h2>
+     <div class="list-group">
+         {{#each anchorList as |item|}}
+            <p {{action 'SelectAnchor' item}}>
+               <a href="#" class="list-group-item">
+                 {{item}}  
+              </a>
+            </p>  
+          {{/each}}
+     </div>
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+      {{!--{{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
+        Submit
+      {{/paper-button}}--}}
+
+    {{!--   {{#paper-button primary=true raised=true onClick=(action 'paymentapproval')}}
+        Jump to Approval
+      {{/paper-button}}--}}
+     
+    {{/step.actions}}
+  {{/stepper.step}}
+
+
+ {{!--7.approve invoice--}}
+ {{#stepper.step label="approve Invoice" as |step|}}
+    {{#step.body}}
+           {{partial 'step5'}}
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+     {{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
+        Submit
+      {{/paper-button}}
+      {{#paper-button onClick=(action 'previousStep')}}
+        Back
+      {{/paper-button}}
+    {{/step.actions}}
+  {{/stepper.step}}
+
+  {{/paper-stepper}}
 
 
 {{#if approveProperty}}

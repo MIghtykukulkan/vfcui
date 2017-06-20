@@ -6,6 +6,8 @@ export default Ember.Route.extend({
 
         aController.set('approveProperty',false);
         aController.set('currentStep',1);
+
+        var TCSlist =[{"name":"TCS","email":"abc@xyz.com","phone":"666","bank":"xyz bank"}];
        
     }
 });

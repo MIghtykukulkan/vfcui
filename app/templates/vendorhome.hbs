@@ -11,7 +11,7 @@
 
 {{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
-
+{{currentStep}}
 {{#stepper.step }}
   {{/stepper.step}}
 
@@ -28,21 +28,22 @@
           {{/each}}
      </div>
     {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-      {{!--{{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
+      {{!-- {{#step.actions as |nextStep |}}
+  {{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
         Submit
       {{/paper-button}}--}}
 
     {{!--   {{#paper-button primary=true raised=true onClick=(action 'paymentapproval')}}
         Jump to Approval
-      {{/paper-button}}--}}
+      {{/paper-button}}
      
-    {{/step.actions}}
+    {{/step.actions}}--}}
+
   {{/stepper.step}}
 
 
  {{!--7.approve invoice--}}
- {{#stepper.step label="approve Invoice" as |step|}}
+ {{#stepper.step label="Upload Invoice" as |step|}}
     {{#step.body}}
            {{partial 'step5'}}
     {{/step.body}}
@@ -55,7 +56,6 @@
       {{/paper-button}}
     {{/step.actions}}
   {{/stepper.step}}
-
   {{/paper-stepper}}
 
 

@@ -36,15 +36,30 @@
         Submit
       {{/paper-button}}
 
-        {{#paper-button primary=true raised=true onClick=(action 'payments')}}
-        Jump to Payments
+        {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
+        Approve Invoice
       {{/paper-button}}
     
     {{/step.actions}}
   {{/stepper.step}}
 
+ {{#stepper.step label="approve Invoice" as |step|}}
+    {{#step.body}}
+           {{partial 'step6'}}
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+     {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
+        Continue
+      {{/paper-button}}--}}
+      {{#paper-button onClick=(action 'previousStep')}}
+        Back
+      {{/paper-button}}
+    {{/step.actions}}
+  {{/stepper.step}}
 
   {{/paper-stepper}}
+
+ 
 
 {{#if approveProperty}}
   {{#modal-dialog close="toggleModal"
@@ -60,4 +75,7 @@
    </div>
 
   {{/modal-dialog}}
+{{/if}}
+{{#if vendorregulator}}
+{{models-table data=model columns=columns }}
 {{/if}}

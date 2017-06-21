@@ -41,7 +41,7 @@
         <li> {{radio-button value=vendorList checked=selectedVendorName onchange=(action 'particularVendor')}} {{vendorList}}</li>
         {{!-- {{#radio-button radioClass = "radioClass" value = vendorList }} {{vendorList}} {{/radio-button}}--}}
         {{/each}}
-       </ul>   {{selectedVendorName}}     
+       </ul>      
 </p>
 <button type="button" class="btn btn-primary"{{action 'particularVendor'selectedVendorName }}>
       Move to purchase Order

@@ -18,10 +18,8 @@ export default Ember.Controller.extend({
                 "title": "Vendor",
                 "className": "text-left"
             },
-             {
-                "propertyName": "programid",
-                "title": "Program ID",
-                "className": "text-left"
+             {  "title": "Program ID",
+                "template": "custom/programid"
             },
             {
                 "propertyName": "status",
@@ -43,6 +41,9 @@ export default Ember.Controller.extend({
             },
             closeProgram:function(){
                 this.transitionToRoute('program',{ queryParams: { step: 'close' }});
+            },
+            test: function() {
+                this.transitionToRoute('sample');
             }
         }
 });

@@ -11,12 +11,12 @@ export default Ember.Controller.extend(stepperMixin,{
     watchstep: function(){
         var step = this.get('step');
         if(step==='close'){
-            this.set('currentStep',8)
-            this.set('percentageComplete',0)
+            this.set('currentStep',8);
+            this.set('percentageComplete',0);
         }
          if(step==='init'){
-            this.set('currentStep',0)
-            this.set('percentageComplete',0)
+            this.set('currentStep',0);
+            this.set('percentageComplete',0);
         }
     }.observes('step'),
     alist:[{

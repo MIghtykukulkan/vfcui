@@ -51,10 +51,7 @@ export default Ember.Controller.extend({
                 console.log(" is being called");
                 //this.transitionToRoute('program',{ queryParams: { step: 'init' }});
                  this.transitionToRoute('initaitepayment');
-        },
-            initiate: function(){
-            this.set('modalmessage', " Payment Initiated Successfully !!! , Click OK to go back to home")
-            this.toggleProperty('approveProperty'); 
         }
+            
         }
 });

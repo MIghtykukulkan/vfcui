@@ -60,7 +60,9 @@ export default Ember.Mixin.create({
         },
         approve:function(){
             console.log("this is approve button");
-       this.toggleProperty('isShowingModal');
+            this.set('modalmessage', " Approve the order successfully !!! , Click OK to go back to home");
+            console.log("approved");
+             this.toggleProperty('approveProperty');    
         },
          
     }

@@ -9,11 +9,12 @@
 {{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
     {{models-table data=model columns=columns }}
+  
   {{#stepper.step label="Select Vendor" stepNumber=1 as |step|}}
     {{#step.body}}
       {{partial "step2"}}
     {{/step.body}}
-  {{#step.actions as |nextStep previousStep|}}
+    {{#step.actions as |nextStep previousStep|}}
      {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
         Continue
       {{/paper-button}} --}}
@@ -24,10 +25,8 @@
   {{/stepper.step}}
 
 {{#stepper.step label="purchase Order" as |step|}}
-    {{#step.body}}
-      
-    {{partial "step4"}}
-
+    {{#step.body}} 
+      {{partial "step4"}}
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
         {{#paper-button primary=true raised=true onClick=(action 'poupload')}}

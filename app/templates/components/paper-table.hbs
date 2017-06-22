@@ -1,3 +1,5 @@
+
+{{!--this is not being used --}}
 {{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
 {{#table.head as |head|}}
   {{#head.column checkbox=true}}
@@ -7,6 +9,7 @@
   {{#head.column sortProp="anchor" numeric=true}}anchor{{/head.column}}
   {{#head.column sortProp="programid" numeric=true}}Program id{{/head.column}}
   {{#head.column sortProp="status" numeric=true}}status{{/head.column}}
+    {{#head.column sortProp="status" numeric=true}}Details{{/head.column}}
 
 {{/table.head}}
 

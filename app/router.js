@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('vregister');
   this.route('sample');
   this.route('anothersample');
+  this.route('initaitepayment');
 });
 
 export default Router;

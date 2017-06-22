@@ -27,7 +27,8 @@ export default Ember.Controller.extend(stepperMixin,{
               
                 "propertyName": "programid",
                 "title": "Program ID",
-                "className": "text-left" 
+         
+                "routeName": "users.user"
                
             },
             {
@@ -99,28 +100,28 @@ export default Ember.Controller.extend(stepperMixin,{
                 this.set('vendorname','Hexaware');
                 this.set('vendoremail','hex@abc.com');
                 this.set('vendorphone',9995111195);
-                this.set('vendorbank','HDFC Bank')
+                this.set('vendorbank','HDFC Bank');
             }
             else if(selectedVendorName === 'Syntex'){
                 console.log("if Syntex loop");
                 this.set('vendorname','Syntex');
                 this.set('vendoremail','syntex@abc.com');
                 this.set('vendorphone',998888888);
-                this.set('vendorbank','Dena Bank')
+                this.set('vendorbank','Dena Bank');
             }
             else if(selectedVendorName === 'Jaguar'){
                 console.log("if Jaguar loop");
                 this.set('vendorname','Jaguar');
                 this.set('vendoremail','Jaguar@abc.com');
                 this.set('vendorphone',8500000001);
-                this.set('vendorbank','SBI Bank')
+                this.set('vendorbank','SBI Bank');
             }
             else if(selectedVendorName === 'Honda'){
                 console.log("if Honda loop");
                 this.set('vendorname','Honda');
                 this.set('vendoremail','honda@abc.com');
                 this.set('vendorphone',9995111195);
-                this.set('vendorbank','Bank of India')
+                this.set('vendorbank','Bank of India');
             }
 
         }

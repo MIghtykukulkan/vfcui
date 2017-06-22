@@ -4,18 +4,16 @@
           <span>Progress</span>
         </div>
         {{paper-slider class="flex" discrete=true value=currentStep step=1 min=1 max=9 onChange=(action (mut rating1))}}
-      </div>
+ </div>
 
 {{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
-
-  {{#stepper.step label="Select Vendor" as |step|}}
+    {{models-table data=model columns=columns }}
+  {{#stepper.step label="Select Vendor" stepNumber=1 as |step|}}
     {{#step.body}}
-  {{partial 'step2'}}
-        {{"This step is performed by the Regulataor"}}
-          
+      {{partial "step2"}}
     {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
+  {{#step.actions as |nextStep previousStep|}}
      {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
         Continue
       {{/paper-button}} --}}
@@ -56,7 +54,6 @@
       {{/paper-button}}
     {{/step.actions}}
   {{/stepper.step}}
-
   {{/paper-stepper}}
 
  
@@ -76,6 +73,4 @@
 
   {{/modal-dialog}}
 {{/if}}
-{{#if vendorregulator}}
-{{models-table data=model columns=columns }}
-{{/if}}
+

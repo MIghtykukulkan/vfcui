@@ -6,7 +6,8 @@ export default Ember.Controller.extend({
             {
                 "propertyName": "sl",
                 "title": "sl.",
-                "className": "text-left"
+                //"className": "text-left",
+                 "routeName": "sample"
             },
             {
                 "propertyName": "anchor",
@@ -18,8 +19,10 @@ export default Ember.Controller.extend({
                 "title": "Vendor",
                 "className": "text-left"
             },
-             {  "title": "Program ID",
-                "template": "custom/programid"
+             {  
+                "propertyName": "programid",
+                "title": "Program ID",
+                "routeName": "sample"
             },
             {
                 "propertyName": "status",
@@ -27,10 +30,12 @@ export default Ember.Controller.extend({
                 "className": "text-left"
             },
               {
-                
+                "title": "Detailings",
+                "template": "custom/programid"
+            },
+            { 
                 "title": "Close",
                 "template": "custom/close"
-  
             }
             ],
 
@@ -42,8 +47,14 @@ export default Ember.Controller.extend({
             closeProgram:function(){
                 this.transitionToRoute('program',{ queryParams: { step: 'close' }});
             },
-            test: function() {
-                this.transitionToRoute('sample');
-            }
+            detailprogram: function() {
+                console.log(" is being called");
+                //this.transitionToRoute('program',{ queryParams: { step: 'init' }});
+                 this.transitionToRoute('initaitepayment');
+        },
+            initiate: function(){
+            this.set('modalmessage', " Payment Initiated Successfully !!! , Click OK to go back to home")
+            this.toggleProperty('approveProperty'); 
+        }
         }
 });

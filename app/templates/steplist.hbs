@@ -13,18 +13,15 @@
 <!-- 1. select anchor -->
   {{#stepper.step label="choose Anchor" as |step|}}
     {{#step.body}}
-      
       {{partial 'step1'}}
-    This step is performed by the Regulataor
-
     {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-     {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
-      {{/paper-button}} --}}
-    {{!--  {{#paper-button onClick=(action 'previousStep')}}
-        Back
-      {{/paper-button}}--}}
+      {{#step.actions as |nextStep previousStep|}}
+        {{!--  {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
+            Continue
+          {{/paper-button}} 
+          {{#paper-button onClick=(action 'previousStep')}}
+             Back
+          {{/paper-button}}--}}
     {{/step.actions}}
   {{/stepper.step}}
 
@@ -32,8 +29,6 @@
   {{#stepper.step label="choose Vendor" as |step|}}
     {{#step.body}}
        {{partial 'step2'}}
-    This step is performed by the Regulataor
-
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
      {{!-- {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
@@ -50,8 +45,6 @@
   <!--3. Initiate program -->
   {{#stepper.step label="Initiate Program" as |step|}}
     {{#step.body}}
-      
-    This step is performed by the Regulataor
     {{partial 'step3'}}
     {{/step.body}}
     {{#step.actions as |nextStep previousStep|}}
@@ -61,11 +54,9 @@
       {{#paper-button onClick=(action 'previousStep')}}
         Back
       {{/paper-button}}
-
       {{#paper-button primary=true raised=true onClick=(action 'gotohome')}}
         Home
-      {{/paper-button}}
-
+      {{/paper-button}} 
     {{/step.actions}}
   {{/stepper.step}}
 
@@ -125,7 +116,7 @@
       {{/paper-button}}
     {{/step.actions}}
   {{/stepper.step}}
---}}
+
 
  {{!--8. initiate payment --}}
   {{#stepper.step label="Initiate Payment" as |step|}}
@@ -137,6 +128,7 @@
      
     {{/step.actions}}
   {{/stepper.step}}
+
 
 
  {{!--8. approve payment --}}
@@ -167,7 +159,7 @@
   {{/stepper.step}}
 
 
-  
+--}}
 
 
 

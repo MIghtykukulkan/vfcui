@@ -59,114 +59,7 @@
       {{/paper-button}} 
     {{/step.actions}}
   {{/stepper.step}}
-
-{{!--
-<!--4. select program and upload document-->
-  {{#stepper.step label="purchase Order" as |step|}}
-    {{#step.body}}
-      
-    {{partial "step4"}}
-
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-        {{#paper-button primary=true raised=true onClick=(action 'poupload')}}
-        Submit
-      {{/paper-button}}
-
-        {{#paper-button primary=true raised=true onClick=(action 'payments')}}
-        Jump to Payments
-      {{/paper-button}}
-    
-    {{/step.actions}}
-  {{/stepper.step}}
-
-
- {{!--5. upload invoice--}}
-  {{#stepper.step label="Upload Invoice" as |step|}}
-    {{#step.body}}
-
-    Pending approvals : 
-            {{partial 'step5'}}
-            
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'invoiceupload')}}
-        Submit
-      {{/paper-button}}
-
-       {{#paper-button primary=true raised=true onClick=(action 'paymentapproval')}}
-        Jump to Approval
-      {{/paper-button}}
-     
-    {{/step.actions}}
-  {{/stepper.step}}
-
-
- {{!--7.approve invoice--}}
-  {{#stepper.step label="approve Invoice" as |step|}}
-    {{#step.body}}
-           {{partial 'step6'}}
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'nextStep')}}
-        Continue
-      {{/paper-button}}
-      {{#paper-button onClick=(action 'previousStep')}}
-        Back
-      {{/paper-button}}
-    {{/step.actions}}
-  {{/stepper.step}}
-
-
- {{!--8. initiate payment --}}
-  {{#stepper.step label="Initiate Payment" as |step|}}
-    {{#step.body}}
-     
-            {{partial 'step7'}}
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-     
-    {{/step.actions}}
-  {{/stepper.step}}
-
-
-
- {{!--8. approve payment --}}
-  {{#stepper.step label="Approve Payment" as |step|}}
-    {{#step.body}}
-     
-            {{partial 'step8'}}
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-       {{#paper-button primary=true raised=true onClick=(action 'approvePayment')}}
-        Approve Payment
-        {{/paper-button}}
-     {{/step.actions}}
-  {{/stepper.step}}
-
-   {{!--9. program closure --}}
-  {{#stepper.step label="Program closure" as |step|}}
-    {{#step.body}}
-          {{partial 'step9'}}
-            
-    {{/step.body}}
-    {{#step.actions as |nextStep previousStep|}}
-      {{#paper-button primary=true raised=true onClick=(action 'gotohome')}}
-        Home
-      {{/paper-button}}
-      
-    {{/step.actions}}
-  {{/stepper.step}}
-
-
---}}
-
-
-
-
-
-  {{!-- add as many steps as necessary --}}
-
+  
 {{/paper-stepper}}
 
 
@@ -184,4 +77,4 @@ Choose the program :
 
 <input type="button" value="Submit" class ="btn btn-success" {{action 'purchaseorder'}}>
 
--->
+

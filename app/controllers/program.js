@@ -19,6 +19,7 @@ export default Ember.Controller.extend(stepperMixin,{
             this.set('percentageComplete',0);
         }
     }.observes('step'),
+    
     alist:[{
         "name":"ABC Pvt ltd"
     },{}],

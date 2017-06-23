@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('sample');
   this.route('anothersample');
   this.route('initaitepayment');
+  this.route('anchorprogram');
 });
 
 export default Router;

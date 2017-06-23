@@ -48,8 +48,8 @@ export default Ember.Controller.extend({
                 this.transitionToRoute('program',{ queryParams: { step: 'close' }});
             },
             detailprogram: function() {
-                console.log(" is being called");
-                //this.transitionToRoute('program',{ queryParams: { step: 'init' }});
+              
+                //this.transitionToRoute('program',{ queryParams: { steps: 'start' }});
                  this.transitionToRoute('initaitepayment');
         }
             

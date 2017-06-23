@@ -3,7 +3,7 @@ import stepperMixin from '../mixins/stepper';
 
 export default Ember.Controller.extend(stepperMixin,{
 
-
+//this controller for initiate the payment from bank
     actions:{
         initiate: function(){
             console.log("initiate paymets");

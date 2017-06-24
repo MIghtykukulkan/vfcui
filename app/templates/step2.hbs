@@ -12,30 +12,6 @@
 {{/each}}
 </div>-->
 
-<h1> Choose the Vendor for the anchor :  </h1>
-<div class="list-group">
-
-<p class="list-group-item">
-  
-{{multiselect-checkboxes options=vendorList  selection=selectedvendor }}
-
-</p> 
- <p>Vendor list:
-       <ul>
-        {{#each selectedvendor as |vendorList|}}
-           <li>{{vendorList}}</li>
-          {{/each}}
-       </ul>        
-</p>
-
-<button type="button" class="btn btn-primary"{{action 'particularVendor' selectedvendor }}>
-      Submit 
-      </button>
-</div>
-
-
-
-{{!--
     
 {{#if vendorregulator}}
 <h1> Choose the Vendor for the anchor :  </h1>
@@ -59,17 +35,35 @@
       </button>
 </div>
 {{else}}
-<div>
-<p><h1>Choose one of Vendor the for Purchase Order:</h1>
-       <ul>
+
+<p><h1>Choose one of Vendor the for Purchase Order:</h1></p>
+    <!--This code is for when regulators selects vendor for anchor-->  
+      <!-- <ul>
         {{#each selectedvendor as |vendorList|}}
         <li> {{radio-button value=vendorList checked=selectedVendorName onchange=(action 'particularVendor')}} {{vendorList}}</li>
         
         {{/each}}
        </ul>      
-</p>
-<button type="button" class="btn btn-primary"{{action 'particularVendor'selectedVendorName }}>
+      </p>
+      <button type="button" class="btn btn-primary"{{action 'particularVendor'selectedVendorName }}>
       Next
       </button>
+      </div>-->
+
+<div class="list-group">
+      <p class="list-group-item">
+            {{multiselect-checkboxes options=vendorList  selection=selectedvendor }}
+      </p> 
+      <p>Vendor list:
+            <ul>
+                  {{#each selectedvendor as |vendorList|}}
+                  <li>{{vendorList}}</li>
+                  {{/each}}
+            </ul>        
+      </p>
+<button type="button" class="btn btn-primary"{{action 'particularVendor' selectedvendor }}>
+      Submit 
+</button>
 </div>
-{{/if}}--}}
+
+{{/if}}

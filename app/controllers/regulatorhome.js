@@ -55,31 +55,26 @@ export default Ember.Controller.extend({
               var status =JSON.parse(JSON.stringify(data.status));
               console.log(status);
               if(status === "program Initiated"){
-                console.log("abc");
                 this.set("programInitiate",true);
               //  this.transitionToRoute('regulatorhome');
-              }else if(status === "payment pending"){
-                  
-                  console.log("xyz");
+              }else if(status === "payment pending"){ 
                   this.set("paymentPending",true);
                   this.transitionToRoute('initaitepayment');
               }else if(status === "PO raised"){
-                    
                   this.set("PORaised",true);                      
               }else if (status ==="Payment Approved"){
-                  
                   this.set("paymentapproved",true);   
               }
                 
             },
-             closure:function(){
+            closure:function(){
                  console.log("asa");
-             this.toggleProperty('approveProperty');  
-        },
-        gotohome:function(){
-           // this.transitionToRoute('regulatorhome');
-             window.location.reload(true);
-        }
+                 this.toggleProperty('approveProperty');  
+            },
+            gotohome:function(){
+                // this.transitionToRoute('regulatorhome');
+                window.location.reload(true);
+            }
         
          
 

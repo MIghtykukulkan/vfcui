@@ -1,7 +1,34 @@
 
+
+
+{{#if programInitiate}}
+{{partial 'sample'}}
+{{else if PORaised}}
+{{partial 'step8'}}
+{{else if paymentapproved}}
+{{partial 'step9' }}
+{{else}}
+
 <div class="row padding-10">
 
    <input type="button" class="btn btn-primary pull-right" value="Create New Program" {{action 'createprogram'}}>
 
 </div>
-{{models-table data=model columns=columns delete='closeProgram' test='detailprogram'}}
+{{models-table data=model columns=columns close='closure' test='detailprogram'}}
+{{/if}}
+
+{{#if approveProperty}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+   <div class="loginmodal-container">
+ <p>
+Program get closed
+   {{modalmessage}}
+      
+ </p>
+ <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
+   </div>
+
+  {{/modal-dialog}}
+{{/if}}

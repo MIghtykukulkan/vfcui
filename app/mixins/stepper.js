@@ -10,6 +10,7 @@ export default Ember.Mixin.create({
     //selectvendor :null,
     vendoranchorlist :false,
     vendorregulator :false,
+    PORaised:false,
     
     actions:{
         chooseAnchor:function(anchorItem){
@@ -64,6 +65,9 @@ export default Ember.Mixin.create({
             console.log("approved");
              this.toggleProperty('approveProperty');    
         },
+        closure:function(){
+             this.toggleProperty('approveProperty');  
+        }
          
     }
 });

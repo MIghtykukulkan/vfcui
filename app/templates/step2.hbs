@@ -11,6 +11,31 @@
 </p>  
 {{/each}}
 </div>-->
+
+<h1> Choose the Vendor for the anchor :  </h1>
+<div class="list-group">
+
+<p class="list-group-item">
+  
+{{multiselect-checkboxes options=vendorList  selection=selectedvendor }}
+
+</p> 
+ <p>Vendor list:
+       <ul>
+        {{#each selectedvendor as |vendorList|}}
+           <li>{{vendorList}}</li>
+          {{/each}}
+       </ul>        
+</p>
+
+<button type="button" class="btn btn-primary"{{action 'particularVendor' selectedvendor }}>
+      Submit 
+      </button>
+</div>
+
+
+
+{{!--
     
 {{#if vendorregulator}}
 <h1> Choose the Vendor for the anchor :  </h1>
@@ -39,7 +64,7 @@
        <ul>
         {{#each selectedvendor as |vendorList|}}
         <li> {{radio-button value=vendorList checked=selectedVendorName onchange=(action 'particularVendor')}} {{vendorList}}</li>
-        {{!-- {{#radio-button radioClass = "radioClass" value = vendorList }} {{vendorList}} {{/radio-button}}--}}
+        
         {{/each}}
        </ul>      
 </p>
@@ -47,4 +72,4 @@
       Next
       </button>
 </div>
-{{/if}}
+{{/if}}--}}

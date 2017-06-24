@@ -1,5 +1,5 @@
 {{outlet}}
-{{"this payment page"}}
+{{!--{{"this payment page"}}--}}
 <div class="panel panel-primary">
 <div class="panel-heading">  Details page </div>
 </div>
@@ -50,3 +50,19 @@
       </div>
     </div>
   </form>
+
+  {{#if approveProperty}}
+  {{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+   <div class="loginmodal-container">
+ <p>
+
+   {{modalmessage}}
+      
+ </p>
+ <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
+   </div>
+
+  {{/modal-dialog}}
+{{/if}}

@@ -13,7 +13,7 @@ export default Ember.Controller.extend(stepperMixin,{
         vendoremail:null,
         vendorphone:null,
         vendorbank:null,
-
+        selectedVendor:null,
         anchorstep: function(){
         var step = this.get('steps');
         if(step==='end'){
@@ -27,11 +27,13 @@ export default Ember.Controller.extend(stepperMixin,{
     }.observes('steps'),
 
     actions:{
-        //This fuction is for 'next' button
+//This fuction is for 'next' button.This is fuctonality used when bank will intiate the program and send vendor list to anchor
          particularVendor:function(selectedVendorName){
              var selectedVendorName =selectedVendorName;
             console.log("selectedVendorName :"+selectedVendorName);
+            console.log("abc");
             this.set('selectedVendor',selectedVendorName);
+     
             if(selectedVendorName === 'TCS'){
                 console.log("if TCS  loop"); 
                 this.set('vendorname','TCS');
@@ -80,8 +82,8 @@ export default Ember.Controller.extend(stepperMixin,{
              this.set('percentageComplete', 100); 
         },
          gotohome: function(){
-
-                this.toggleProperty('approveProperty'); 
+             
+             this.toggleProperty('approveProperty'); 
               
                
         },

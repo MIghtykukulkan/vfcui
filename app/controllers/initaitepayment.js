@@ -9,6 +9,9 @@ export default Ember.Controller.extend(stepperMixin,{
             console.log("initiate paymets");
             this.set('modalmessage', " Payment Initiated Successfully !!! , Click OK to go back to home");
             this.toggleProperty('approveProperty'); 
+        },
+        gotohome:function(){
+            this.transitionToRoute('regulatorhome');
         }
     }
 

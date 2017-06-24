@@ -60,6 +60,18 @@
     {{/step.actions}}
   {{/stepper.step}}
   
+{{#if PORaised}}
+{{#stepper.step label="Initiate Payment" as |step|}}
+    {{#step.body}}
+     
+            {{partial 'step7'}}
+    {{/step.body}}
+    {{#step.actions as |nextStep previousStep|}}
+     
+    {{/step.actions}}
+  {{/stepper.step}}
+{{/if}}
+
 {{/paper-stepper}}
 
 

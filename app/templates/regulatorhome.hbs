@@ -2,7 +2,18 @@
 
 
 {{#if programInitiate}}
-{{partial 'sample'}}
+{{#modal-dialog close="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+   <div class="loginmodal-container">
+      <p>
+     After Approving Invoice from Anchor ,You should Initiate the payment !!
+      {{modalmessage}}
+      </p>
+ <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
+   </div>
+
+  {{/modal-dialog}}
 {{else if PORaised}}
 {{partial 'step8'}}
 {{else if paymentapproved}}
@@ -22,11 +33,10 @@
                   targetAttachment="center"
                   translucentOverlay=true}}
    <div class="loginmodal-container">
- <p>
-Program get closed
-   {{modalmessage}}
-      
- </p>
+      <p>
+        Program Close
+      {{modalmessage}}
+      </p>
  <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
    </div>
 

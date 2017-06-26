@@ -2,29 +2,29 @@
 
 
 {{#if programInitiate}}
-{{#modal-dialog close="toggleModal"
+    {{#modal-dialog close="toggleModal"
                   targetAttachment="center"
                   translucentOverlay=true}}
-   <div class="loginmodal-container">
-      <p>
-     After Approving Invoice from Anchor ,You should Initiate the payment !!
-      {{modalmessage}}
-      </p>
+      <div class="loginmodal-container">
+        <p>
+          After Approving Invoice from Anchor ,You should Initiate the payment !!
+          {{modalmessage}}
+        </p>
  <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
    </div>
 
-  {{/modal-dialog}}
+    {{/modal-dialog}}
+
 {{else if PORaised}}
-{{partial 'step8'}}
+    {{partial 'step8'}}
 {{else if paymentapproved}}
-{{partial 'step9' }}
+    {{partial 'step9' }}
+{{else if  Invoiceapprove}}
+    {{partial 'invoiceapprv'}}
 {{else}}
-
-<div class="row padding-10">
-
-   <input type="button" class="btn btn-primary pull-right" value="Create New Program" {{action 'createprogram'}}>
-
-</div>
+    <div class="row padding-10">
+      <input type="button" class="btn btn-primary pull-right" value="Create New Program" {{action 'createprogram'}}>
+    </div>  
 {{models-table data=model columns=columns close='closure' test='detailprogram'}}
 {{/if}}
 

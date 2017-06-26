@@ -11,7 +11,8 @@ export default Ember.Controller.extend({
         },
         login: function() {
             console.log("Action Loginss");
-
+           // var email= get('email');
+           // console.log('email'+email);
             switch (this.get('usertype')) {
                 case "anchor":
                     this.transitionToRoute('anchorhome');

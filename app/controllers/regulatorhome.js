@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
      paymentPending:false,
      PORaised:false,
      paymentapproved:false,
-
+     Invoiceapprove:false,
      columns: [
             {
                 "propertyName": "sl",
@@ -64,6 +64,9 @@ export default Ember.Controller.extend({
                   this.set("PORaised",true);                      
               }else if (status ==="Payment Approved"){
                   this.set("paymentapproved",true);   
+              }
+              else if(status==="Invoice approval"){
+                  this.set("Invoiceapprove",true)
               }
                 
             },

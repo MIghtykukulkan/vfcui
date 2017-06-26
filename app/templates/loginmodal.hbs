@@ -7,15 +7,14 @@
 
                	<div class="loginmodal-container">
 					<h1>Login to Your Account</h1><br>
-				  <form>
-					<div class="error">
-             {{input type="text" valuePath='email' placeholder='Email Id' }}
-          </div>
-					 <div class="error">
-             {{input type="text" valuePath='password' placeholder='Password' }}
-          </div>
+				
+           <div>
+             {{validated-input type="text"  model=this  valuePath='email' placeholder="Email Id" }}
+            </div>
+             {{validated-input type="password" model=this  valuePath='password' placeholder="Password"}}
+       
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login" {{action 'login'}}>
-				  </form>
+				  
 					
 				  <div class="login-help">
 				 <a href="#">Forgot Password</a>

@@ -11,7 +11,7 @@
 
 {{#paper-stepper vertical=false alternative=true  currentStep=currentStep onStepChange=(action (mut currentStep))
   onStepperCompleted=(action "saveModel") as |stepper|}}
-{{currentStep}}
+
 {{#stepper.step }}
   {{/stepper.step}}
 

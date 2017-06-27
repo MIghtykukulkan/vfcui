@@ -74,8 +74,8 @@ export default Ember.Controller.extend({
                  this.toggleProperty('approveProperty');  
             },
             gotohome:function(){
-                 this.transitionToRoute('regulatorhome');
-               // window.location.reload(true);
+                // this.transitionToRoute('regulatorhome');
+                window.location.reload(true);
             }
         
          

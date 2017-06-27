@@ -5,9 +5,11 @@ export default Ember.Controller.extend({
 
      actions:{
          toggleModal: function(usertype) {
-             this.toggleProperty('isShowingModal');    
+               console.log("abc");
+            this.toggleProperty('isShowingModal');    
             var usertype =usertype;
             console.log(usertype);
+           // window.location.reload(true);
         }
     }
 

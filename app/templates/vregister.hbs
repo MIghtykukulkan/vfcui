@@ -19,6 +19,30 @@
        
       </div>
     </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2">Password:</label>
+      <div class="col-sm-10">
+          {{input type="password" class="form-control" id="password" placeholder="Password"}}
+       </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Conform Password:</label>
+      <div class="col-sm-10">
+          {{input type="password" class="form-control" id="conformpassword" placeholder="Conform Password"}}
+       </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2"  >Email:</label>
+      <div class="col-sm-10">        
+          {{input type="email" class="form-control"  placeholder="Email"}}  
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+<div class="panel-heading"> Vendor bank details </div>
+</div>
+
     <div class="form-group">
       <label class="control-label col-sm-2">Account Number:</label>
       <div class="col-sm-10">        
@@ -35,21 +59,21 @@
     </div>
 
      <div class="form-group">
-      <label class="control-label col-sm-2"  >Limit</label>
+      <label class="control-label col-sm-2"  >Limit :</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Limit"}}  
       </div>
     </div>
 
-     <div class="form-group">
+  <!--   <div class="form-group">
       <label class="control-label col-sm-2"  >Expiry date</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Expiry date"}}  
       </div>
-    </div>
+    </div>-->
 
      <div class="form-group">
-      <label class="control-label col-sm-2"  >Phone Number </label>
+      <label class="control-label col-sm-2"  >Phone Number:</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Phone"}}  
       </div>
@@ -63,26 +87,26 @@
     </div>
 
 
-    <div class="form-group">
+   <!-- <div class="form-group">
       <label class="control-label col-sm-2"  >Address:</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Address"}}  
       </div>
     </div>
 
-    <div class="form-group">
+   <div class="form-group">
       <label class="control-label col-sm-2"  >Supplier code:</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Supplier code"}}  
       </div>
-    </div>
+    </div>-->
 
-    <div class="form-group">
+  <!--  <div class="form-group">
           <label class="control-label col-sm-2"  >Landmark:</label>
       <div class="col-sm-10">        
           {{input type="text" class="form-control"  placeholder="Landmark"}}  
       </div>
-    </div>
+    </div>-->
 
     <div class="form-group">
       <label class="control-label col-sm-2"  >Vendor bank address:</label>
@@ -91,17 +115,11 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2"  >Email:</label>
-      <div class="col-sm-10">        
-          {{input type="email" class="form-control"  placeholder="Email"}}  
-      </div>
-    </div>
-
+    
     <!-- sumbit button -->
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'toggleModal'}}>
+        <input type="button" class="btn btn-primary pull-right" value="Submit" {{action 'toggleModal' 'vendor'}}>
       </div>
     </div>
   </form>

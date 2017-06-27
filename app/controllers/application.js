@@ -36,10 +36,19 @@ export default Ember.Controller.extend({
             else if(isVendor){
                     this.transitionToRoute('vregister');
             }
+            else {
+                window.location.reload(true);
+            }
         },
 
         togglepanel:function(){
             this.toggleProperty('tgp');
+        },
+       toggleModal: function(usertype) {
+             console.log("adad");
+            this.toggleProperty('isShowingModal');    
+            var usertype =usertype;
+            console.log(usertype);
         }
     }
 });

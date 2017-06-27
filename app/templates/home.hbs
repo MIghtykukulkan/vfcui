@@ -6,7 +6,7 @@
 
     <span class="pt-10 bgblue">
       <div  {{action "toggleModal" "anchor"}} class="largeicon"> {{material-design-icon name='account-circle' addClass='blue'}} </div>
-      ANCHOR
+      MANUFACTURES
     </span>
   
     </div>
@@ -21,7 +21,7 @@
     <div class="col-lg-4 col-md-4 text-center pt-0">
          <span class="pt-10 bgblue">
             <div  {{action "toggleModal" "regulator"}} class="largeicon">  {{material-design-icon name='account-balance'}} </div>
-            REGULATOR
+         BANK
         </span>
     </div>
 
@@ -30,27 +30,4 @@
 
 {{partial "loginmodal"}}
 
-  {{!--  {{#if isShowingModal}}
-  {{#modal-dialog close="toggleModal"
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-
-     	<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form>
-					<div class="error">
-             {{input type="text" valuePath='email' placeholder='Email Id' }}
-          </div>
-					 <div class="error">
-             {{input type="text" valuePath='password' placeholder='Password' }}
-          </div>
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login" {{action 'login'}}>
-				  </form>
-					
-				  <div class="login-help">
-				 <a href="#">Forgot Password</a>
-				  </div>
-				</div>
-
-  {{/modal-dialog}}
-{{/if}}--}}
+  

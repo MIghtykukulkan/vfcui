@@ -6,7 +6,7 @@ export default Ember.Route.extend({
         //set the model property as false
         this.controllerFor('home').set('isShowingModal',false)   
         this.controllerFor('application').set('email', null);
-           this.controllerFor('application').set('password', null);
+        this.controllerFor('application').set('password', null);
         
     }
 });

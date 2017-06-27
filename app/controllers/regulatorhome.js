@@ -56,7 +56,6 @@ export default Ember.Controller.extend({
               console.log(status);
               if(status === "program Initiated"){
                 this.set("programInitiate",true);
-              //  this.transitionToRoute('regulatorhome');
               }else if(status === "payment pending"){ 
                   this.set("paymentPending",true);
                   this.transitionToRoute('initaitepayment');
@@ -75,8 +74,8 @@ export default Ember.Controller.extend({
                  this.toggleProperty('approveProperty');  
             },
             gotohome:function(){
-                // this.transitionToRoute('regulatorhome');
-                window.location.reload(true);
+                 this.transitionToRoute('regulatorhome');
+               // window.location.reload(true);
             }
         
          

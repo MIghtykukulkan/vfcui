@@ -28,6 +28,8 @@ export default Ember.Controller.extend(Validations,{
    
 
     isShowingModal: false,
+    email:null,
+    password:null,
     actions: {
         toggleModal: function(usertype) {
             this.toggleProperty('isShowingModal');            
@@ -37,14 +39,11 @@ export default Ember.Controller.extend(Validations,{
             console.log("Action Loginss");
            var email= this.get('email');
            console.log('email'+email);
+           this.set('email',null);
            var password=this.get('password');
            console.log('password'+password);
+           this.set('password',null);
 
-              if(email === " " || email === null){
-                  console.log("fields empty");
-              }else{
-                  console.log("fields are filled");
-              }
             switch (this.get('usertype')) {
                 case "anchor":
                     this.transitionToRoute('anchorhome');

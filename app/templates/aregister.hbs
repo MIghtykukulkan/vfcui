@@ -4,17 +4,15 @@
   <form class="form-horizontal">
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="email">First Name:</label>
+      <label class="control-label col-sm-2" for="fname">First Name:</label>
       <div class="col-sm-10">
-          {{input type="text" class="form-control" valuePath="fname" id="fname" placeholder="Enter first Name"}}
-       
+          {{validated-input type="text" model=this  valuePath='fname' placeholder="Enter first name"}}
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Last Name:</label>
+      <label class="control-label col-sm-2" for="lname">Last Name:</label>
       <div class="col-sm-10">
-          {{input type="text" class="form-control" valuePath="lname" id="lname" placeholder="Enter last Name"}}
-       
+         {{validated-input type="text" model=this  valuePath='lname' placeholder="Enter first name"}}
       </div>
     </div>
 
@@ -22,30 +20,30 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-          {{input type="email" class="form-control" id="email" placeholder="Enter email"}}
+         {{validated-input type="email" model=this  valuePath='email' placeholder="Enter Email"}}
        
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Password:</label>
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-10">
-          {{input type="password" class="form-control" id="password" placeholder="Enter Password"}}
+          {{validated-input type="password"  model=this valuePath="password" placeholder="Enter Password"}}
        
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Conform Password:</label>
+      <label class="control-label col-sm-2" for="cpwd">Confirm Password:</label>
       <div class="col-sm-10">
-          {{input type="password" class="form-control" id="conformpassword" placeholder="Enter Conform password"}}
+          {{validated-input type="password"model=this valuePath="confirmpassword" placeholder="Enter Conform password"}}
        
       </div>
     </div>
     
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Mobile:</label>
+      <label class="control-label col-sm-2" for="mobile">Phone NO:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Mobile Number"}}  
+          {{validated-input type="text"  model=this valuePath="phonenumber" placeholder="Mobile Number"}}  
       </div>
     </div>
    
@@ -54,30 +52,30 @@
 </div>
 
  <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Operations Email ID:</label>
+      <label class="control-label col-sm-2" for="opemail">Operations Email ID:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Operations Email"}}  
+          {{input type="text" class="form-control" valueBinding="opremail" placeholder="Operations Email"}}  
       </div>
     </div>
 
      <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Repayment Account No.:</label>
+      <label class="control-label col-sm-2" for="accno">Repayment Account No.:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Repayment Account"}}  
+          {{input type="text" class="form-control" valueBinding="repayaccno" placeholder="Repayment Account"}}  
       </div>
     </div>
 
      <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Relationship Manager Email ID:</label>
+      <label class="control-label col-sm-2" for="rmemail">Relationship Manager Email ID:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Relationship Manager Email"}}  
+          {{input type="text" class="form-control" valueBinding="rmemail" placeholder="Relationship Manager Email"}}  
       </div>
     </div>
 
      <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Customers Limit:</label>
+      <label class="control-label col-sm-2" for="cusmlimit">Customers Limit:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Customers Limit"}}  
+          {{input type="text" class="form-control" valueBinding="customerlimit" placeholder="Customers Limit"}}  
       </div>
     </div>
 
@@ -90,9 +88,9 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Fee Percentage:</label>
+      <label class="control-label col-sm-2" for="feeper">Fee Percentage:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Fee Percentage "}}  
+          {{input type="text" class="form-control" valueBinding="feepercentage" placeholder="Fee Percentage "}}  
       </div>
     </div>
 <!--
@@ -188,7 +186,7 @@
     <!-- sumbit button -->
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <input type="button" class="btn btn-primary pull-right" value="Submit" {{action 'toggleModal''achor'}}>
+        <input type="button" class="btn btn-primary pull-right" value="Submit" {{action 'aregister''achor'}}>
       </div>
     </div>
   </form>
@@ -200,10 +198,9 @@
    <div class="loginmodal-container">
   <p>
      Registration successfull .. !!
-
   </p>
 
- <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'toggleModal'}}>
+ <input type="button" class="btn btn-primary pull-right" value="OK" {{action 'gotohome'}}>
    </div>
 
   {{/modal-dialog}}

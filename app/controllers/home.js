@@ -36,7 +36,7 @@ export default Ember.Controller.extend(Validations,{
             this.set('usertype', usertype);
         },
        login: function() {
-            console.log("Action Loginss");
+           console.log("Action Loginss");
            var email= this.get('email');
            console.log('email'+email);
            this.set('email',null);
@@ -44,6 +44,7 @@ export default Ember.Controller.extend(Validations,{
            console.log('password'+password);
            this.set('password',null);
 
+           
             switch (this.get('usertype')) {
                 case "anchor":
                     this.transitionToRoute('anchorhome');

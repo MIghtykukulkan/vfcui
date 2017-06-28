@@ -59,6 +59,42 @@ var Validations = buildValidations({
             regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
         })
     ],
+    opremail:[
+         validator('presence', true),
+        validator('format', {
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
+        })
+    ],
+    rmemail:[
+         validator('presence', true),
+        validator('format', {
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
+        })
+    ],
+    repayaccno:[
+        validator('presence', true),
+         validator('format', {
+            regex: /^[0-9]+$/,
+            max:12
+        }),
+    ],
+    customerlimit:[
+        validator('presence', true),
+         validator('format', {
+            regex: /^[0-9]+$/,
+            max:12
+        })
+    ],
+    feepercentage:[
+        validator('presence', true),
+         validator('format', {
+            regex: /^[0-9]+$/,
+            max:12
+        })
+    ]
+
 
 });
 
@@ -77,6 +113,7 @@ export default Ember.Controller.extend(Validations, {
             var fname = this.get('fname');
             console.log(fname);
             var lname = this.get('lname');
+              console.log(lname);
         },
         gotohome:function(){
              window.location.reload(true);

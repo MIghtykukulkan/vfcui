@@ -55,7 +55,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2">Account Number:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Account Number"}}  
+        {{validated-input type="text"  model=this valuePath="accno" placeholder="Account number"}}
       </div>
     </div>
 
@@ -63,14 +63,14 @@
  <div class="form-group">
       <label class="control-label col-sm-2"  >IFSC code:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="IFSC"}}  
+          {{validated-input type="text"  model=this valuePath="ifsc" placeholder="IFSC Code"}}
       </div>
     </div>
 
      <div class="form-group">
       <label class="control-label col-sm-2"  >Limit :</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Limit"}}  
+          {{validated-input type="text" model=this valuePath="limit"  placeholder="Limit"}}  
       </div>
     </div>
 
@@ -91,7 +91,7 @@
      <div class="form-group">
       <label class="control-label col-sm-2"  >PAN:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="PAN"}}  
+          {{validated-input type="text"model=this valuePath="panno"  placeholder="PAN"}}  
       </div>
     </div>
 
@@ -120,7 +120,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2"  >Vendor bank address:</label>
       <div class="col-sm-10">        
-          {{input type="text" class="form-control"  placeholder="Vendor bank address"}}  
+          {{validated-input type="text" model=this valuePath="vbankaddress" placeholder="Vendor bank address"}}  
       </div>
     </div>
 

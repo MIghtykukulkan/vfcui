@@ -113,7 +113,7 @@ export default Ember.Controller.extend(Validations, {
             var fname = this.get('fname');
             console.log(fname);
             var lname = this.get('lname');
-              console.log(lname);
+            console.log(lname);
         },
         gotohome:function(){
              window.location.reload(true);

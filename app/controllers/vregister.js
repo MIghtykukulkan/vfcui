@@ -59,6 +59,45 @@ var Validations = buildValidations({
             regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
         })
     ],
+    accno:[
+        validator('presence', true),
+        validator('format', {
+            regex: /^[0-9]+$/,
+            max:12
+        }),
+    ],
+    ifsc:[
+        validator('presence', true),
+        validator('format', {
+            regex: /^[0-9]+$/,
+            max:12
+        }),
+    ],
+    limit:[
+        validator('presence', true),
+        validator('format', {
+            regex: /^[0-9]+$/,
+        }),
+        validator('length', {
+            max:10
+        }),
+    ],
+    panno:[
+        validator('presence', true),
+        validator('format', {
+            regex: /^[A-Z0-9]+$/,
+            max:12
+        }),
+    ],
+    vbankaddress:[
+        validator('presence', true),
+        validator('format', {
+            regex: /^[a-z0-9]+$/,
+        }),
+        validator('length', {
+            max:20
+        }),
+    ]
 
 });
 

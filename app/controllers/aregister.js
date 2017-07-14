@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'vendorfin/config/environment';
 import {
     validator,
     buildValidations
@@ -59,39 +60,39 @@ var Validations = buildValidations({
             regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
         })
     ],
-    opremail:[
-         validator('presence', true),
-        validator('format', {
-            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-            message: 'This field must be a valid email address'
-        })
-    ],
-    rmemail:[
-         validator('presence', true),
-        validator('format', {
-            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-            message: 'This field must be a valid email address'
-        })
-    ],
-    repayaccno:[
+    opremail: [
         validator('presence', true),
-         validator('format', {
+        validator('format', {
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
+        })
+    ],
+    rmemail: [
+        validator('presence', true),
+        validator('format', {
+            regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            message: 'This field must be a valid email address'
+        })
+    ],
+    repayaccno: [
+        validator('presence', true),
+        validator('format', {
             regex: /^[0-9]+$/,
-            max:12
+            max: 12
         }),
     ],
-    customerlimit:[
+    customerlimit: [
         validator('presence', true),
-         validator('format', {
+        validator('format', {
             regex: /^[0-9]+$/,
-            max:12
+            max: 12
         })
     ],
-    feepercentage:[
+    feepercentage: [
         validator('presence', true),
-         validator('format', {
+        validator('format', {
             regex: /^[0-9]+$/,
-            max:12
+            max: 12
         })
     ]
 
@@ -108,17 +109,54 @@ export default Ember.Controller.extend(Validations, {
              this.toggleProperty('isShowingModal');    
              
          },*/
+        gotohome: function() {
+            window.location.reload(true);
+            this.transitionToRoute('home');
+        },
         aregister: function(usertype) {
-            this.toggleProperty('isShowingModal');
+            var thiscontroller = this;
             var fname = this.get('fname');
             console.log(fname);
             var lname = this.get('lname');
             console.log(lname);
-        },
-        gotohome:function(){
-             window.location.reload(true);
-            this.transitionToRoute('home');
-        }
-    }
+            var registraionObj = {
+                "firstname": fname,
+                "lastname": lname,
+                "email": this.get('email'),
+                "password": this.get('password'),
+                "operationalemail": this.get('opremail'),
+                "phone": this.get('phonenumber'),
+                "relationshipmanageremail": this.get('rmemail'),
+                "customerlimit": "100",
+                "feepercentage": this.get('feepercentage'),
+                "interestearning": "2",
+                "accountno": this.get('repayaccno'),
+                "ifsccode": "Asdasd",
+                "pan": "calsp",
+                "address": "default",
+            };
 
+
+            console.log(JSON.stringify(registraionObj))
+            $.ajax({
+                type: 'POST',
+                json: true,
+                accepts: 'application/json',
+                ContentType: 'application/json',
+                url: CONFIG.SERVICEURL + 'registerUser',
+                data: registraionObj,
+                success: function(response) {
+                    // mycontroller.set("score", response.score)
+                    console.log(JSON.stringify(response))
+                    thiscontroller.toggleProperty('isShowingModal');
+                },
+                error: function(result) {
+                    console.log(JSON.stringify(result))
+                }
+
+            });
+
+        }
+
+    }
 });

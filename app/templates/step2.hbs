@@ -36,7 +36,7 @@
 </div>
 {{else}}
 
-<p><h1>Choose one of Vendor the for Purchase Order:</h1></p>
+<p><h1>Choose one of Supplier the for Purchase Order:</h1></p>
     <!--This code is for when regulators selects vendor for anchor-->  
       <!-- <ul>
         {{#each selectedvendor as |vendorList|}}
@@ -52,6 +52,7 @@
 
 <div class="list-group">
       <p class="list-group-item">
+            {{!vendorlist is coming from mixin}}
             {{multiselect-checkboxes options=vendorList  selection=selectedvendor }}
       </p> 
   <!--    <p>Vendor list:

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import CONFIG from 'vendorfin/config/environment';
 import {
     validator,
     buildValidations
@@ -59,61 +60,100 @@ var Validations = buildValidations({
             regex: /^(\+\d{1,3}[- ]?)?\d{10}$/,
         })
     ],
-    accno:[
+    accno: [
         validator('presence', true),
         validator('format', {
             regex: /^[0-9]+$/,
-            max:12
+            max: 12
         }),
     ],
-    ifsc:[
+    ifsc: [
         validator('presence', true),
-        validator('format', {
-            regex: /^[0-9]+$/,
-            max:12
-        }),
+        /* validator('format', {
+             regex: /^[A-z][0-9]+$/,
+             max: 12
+         }),*/
     ],
-    limit:[
+    limit: [
         validator('presence', true),
         validator('format', {
             regex: /^[0-9]+$/,
         }),
         validator('length', {
-            max:10
+            max: 10
         }),
     ],
-    panno:[
+    panno: [
         validator('presence', true),
         validator('format', {
             regex: /^[A-Z0-9]+$/,
-            max:12
+            max: 12
         }),
     ],
-    vbankaddress:[
+    vbankaddress: [
         validator('presence', true),
         validator('format', {
             regex: /^[a-z0-9]+$/,
         }),
         validator('length', {
-            max:20
+            max: 20
         }),
     ]
 
 });
 
 export default Ember.Controller.extend(Validations, {
-    isShowingModal:false,
+    isShowingModal: false,
 
-     actions:{
-         vregister: function(usertype) {
-               console.log("abc");
-            this.toggleProperty('isShowingModal');    
-            var usertype =usertype;
+    actions: {
+        vregister: function(usertype) {
+            console.log("abc");
+            this.toggleProperty('isShowingModal');
+            var usertype = usertype;
             console.log(usertype);
-           // window.location.reload(true);
+            // window.location.reload(true);
+            var thiscontroller = this;
+            var registraionObj = {
+                "firstname": this.get('fname'),
+                "lastname": this.get('lname'),
+                "email": this.get('email'),
+                "password": this.get('password'),
+                "operationalemail": this.get('email'),
+                "phone": this.get('phonenumber'),
+                "relationshipmanageremail": this.get('email'),
+                "customerlimit": "100",
+                "feepercentage": "12",
+                "interestearning": "2",
+                "accountno": "212323",
+                "ifsccode": "Asdasd",
+                "pan": "calsp",
+                "address": "default",
+            };
+
+
+            console.log(JSON.stringify(registraionObj))
+            $.ajax({
+                type: 'POST',
+                json: true,
+                accepts: 'application/json',
+                ContentType: 'application/json',
+                url: CONFIG.SERVICEURL + 'registerUser',
+                data: registraionObj,
+                success: function(response) {
+                    // mycontroller.set("score", response.score)
+                    console.log(JSON.stringify(response))
+                    thiscontroller.toggleProperty('isShowingModal');
+                },
+                error: function(result) {
+                    console.log(JSON.stringify(result))
+                }
+
+            });
+
+
         },
-        gotohome:function(){
-             window.location.reload(true);
+        gotohome: function() {
+            window.location.reload(true);
             this.transitionToRoute('home');
         }
     }

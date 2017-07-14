@@ -2,15 +2,71 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-    model(){
-        var data = [{"sl":"1", "vendor":"CCS Electricals", "anchor":"rs cables", "programid":"31313","status":"program Initiated", "action":"","action":""},
-        {"sl":"2", "vendor":"ABC company", "anchor":"glasswall", "programid":"3137","status":"payment pending", "action":"","action":""},
-        {"sl":"3", "vendor":"bca company", "anchor":"rpqb", "programid":"5773","status":"payment pending","action":"","action":""},
-        {"sl":"4", "vendor":"CDD company", "anchor":"rapidqube", "programid":"3553","status":"Invoice approval","action":"","action":""},
-        {"sl":"5", "vendor":"Tom harry company", "anchor":"new ventures", "programid":"238","status":"payment pending","action":"","action":""},
-        {"sl":"6", "vendor":"APPLE company", "anchor":"BMC raw materials", "programid":"852","status":"PO raised","action":"","action":""},
-        {"sl":"7", "vendor":"Quetzaquatl company", "anchor":"Honda motors","programid":"5613","status":"Payment Approved","action":"","action":""}]
-
+    model() {
+        var data = [{
+                "sl": "1",
+                "Supplier": "SupplierA",
+                "Manufacturer": "ManufacturerA",
+                "programid": "9171",
+                "status": "program Initiated",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "2",
+                "Supplier": "SupplierB",
+                "Manufacturer": "ManufacturerA",
+                "programid": "9172",
+                "status": "payment pending",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "3",
+                "Supplier": "SupplierC",
+                "Manufacturer": "ManufacturerA",
+                "programid": "9173",
+                "status": "payment pending",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "4",
+                "Supplier": "SupplierD",
+                "Manufacturer": "ManufacturerB",
+                "programid": "9174",
+                "status": "Invoice approval",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "5",
+                "Supplier": "SupplierE",
+                "Manufacturer": "new ventures",
+                "programid": "9175",
+                "status": "payment pending",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "6",
+                "Supplier": "SupplierA",
+                "Manufacturer": "ManufacturerB",
+                "programid": "9176",
+                "status": "PO raised",
+                "action": "",
+                "action": ""
+            },
+            {
+                "sl": "7",
+                "Supplier": "SupplierB",
+                "Manufacturer": "ManufacturerB",
+                "programid": "9177",
+                "status": "Payment Approved",
+                "action": "",
+                "action": ""
+            }
+        ]
 
         return data;
     }
